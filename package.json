@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^10.3.4",
+    "axios": "^0.21.4",
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
@@ -17,6 +18,7 @@
     "mongoose": "^6.0.6",
     "multer": "^1.4.3",
     "multer-gridfs-storage": "^5.0.1",
+    "querystring": "^0.2.1",
     "tailwindcss": "^2.2.15"
   },
   "devDependencies": {

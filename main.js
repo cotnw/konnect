@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
+    require("dotenv").config();
 }
 const express = require("express");
 const app = express();
@@ -10,13 +10,17 @@ const mongoose = require("mongoose");
 const dbURI = process.env.DB_URL;
 const Grid = require("gridfs-stream");
 
+// ROUTES
+const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
+
 // DB CONNECTION
 async function connectDB() {
-  await mongoose.connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  await app.listen(PORT, () => console.log(`Listening on ${PORT}...`));
+    await mongoose.connect(dbURI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+    await app.listen(PORT, () => console.log(`Listening on ${PORT}...`));
 }
 connectDB();
 
@@ -24,8 +28,8 @@ connectDB();
 const conn = mongoose.connection;
 let gfs;
 conn.once("open", () => {
-  gfs = Grid(conn.db, mongoose.mongo);
-  gfs.collection("fs");
+    gfs = Grid(conn.db, mongoose.mongo);
+    gfs.collection("fs");
 });
 
 // SETTINGS
@@ -36,6 +40,5 @@ app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
 // ROUTES
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.use('/', indexRouter);
+app.use('/auth', authRouter);
