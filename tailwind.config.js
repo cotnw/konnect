@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: [],
@@ -19,12 +19,12 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
-      red: colors.red,
+      red: "#FF7070",
       yellow: colors.amber,
       green: colors.emerald,
       blue: colors.blue,
       indigo: colors.indigo,
-      purple: colors.violet,
+      purple: "#6067ED",
       pink: colors.pink,
     },
     spacing: {
@@ -248,6 +248,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        "DM Sans",
         "ui-sans-serif",
         "system-ui",
         "-apple-system",
