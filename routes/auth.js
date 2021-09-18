@@ -40,7 +40,7 @@ router.get('/google/callback', async(req, res) => {
                 })
 
                 await newUser.save()
-                res.redirect(`/register?accessToken=${response.data.access_token}`)
+                res.redirect(`/register?access_token=${response.data.access_token}`)
             }
         })
     })
