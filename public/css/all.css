@@ -6,3 +6,82 @@
   padding-left: 6vw;
   padding-right: 6vw;
 }
+#ap {
+  margin-bottom: 10vh;
+}
+aside {
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s;
+}
+.skill {
+  width: 22%;
+  margin-right: 0.6vw;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.19);
+  background: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+nav.bottom {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.19);
+  transition: all 0.5s;
+}
+.skill-active {
+  border: 2px solid #6067ed;
+  background: rgba(96, 103, 237, 0.1);
+}
+.block-sec {
+  opacity: 1;
+  transition: all 0.5s;
+}
+.page-2,
+.page-3,
+.page-4,
+.page-5 {
+  transition-delay: 0.5s;
+  z-index: 10;
+}
+.remove {
+  animation: remove 0.5s ease-in-out forwards;
+}
+.hide {
+  opacity: 0;
+  transform: translate(20%, 0);
+  pointer-events: none;
+}
+.regis .input {
+  border: 1px solid #717171;
+}
+.btns button,
+nav.bottom button {
+  border: 2px solid #6067ed;
+  transition: all 0.3s;
+}
+.tr {
+  opacity: 0;
+  pointer-events: none;
+}
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.bye-rt {
+  transform: translate(20%, 0);
+  opacity: 0;
+}
+.bye-bt {
+  transform: translate(0, 20%);
+  opacity: 0;
+}
+@keyframes remove {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    transform: translate(-20%, 0);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
