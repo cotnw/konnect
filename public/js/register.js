@@ -43,6 +43,15 @@ for (let skill of document.querySelectorAll(".skill")) {
   });
 }
 
+// PAGE 2
+document.querySelector("input[name='title']").addEventListener("keyup", () => {
+  if (document.querySelector("input[name='title']").value !== "") {
+    proceed.classList.remove("disabled");
+  } else {
+    proceed.classList.add("disabled");
+  }
+});
+
 // PAGE 3
 for (let add of document.querySelectorAll(".add-link")) {
   add.addEventListener("click", () => {
@@ -111,14 +120,13 @@ proceed.addEventListener("click", () => {
     ? document.querySelector(`.page-${page}`).classList.remove("hide")
     : console.log("Submitting form...");
 
+  proceed.classList.add("disabled");
+
   if (page !== 1) {
     back.classList.remove("tr");
   }
-  if (page !== 2) {
-    proceed.classList.add("disabled");
-  }
   if (page === 3) {
-    title = document.querySelector("select[name='title']").value;
+    title = document.querySelector("input[name='title']").value;
   }
 
   if (page === 6) {
