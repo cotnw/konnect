@@ -226,18 +226,26 @@ for (let imgInp of imgInps) {
         })
           .then(async (response) => {
             const resp = await response.json();
-            console.log(resp.link)
-            document.querySelector(`#img-show-${imgInp.id}`).src = resp.link
+            console.log(resp.link);
+            document.querySelector(`#img-show-${imgInp.id}`).src = resp.link;
             media.push(resp.link);
             imgInp.parentElement.classList.add("hidden");
             if (
-              imgInp.parentElement.nextElementSibling.classList.contains("hidden")
+              imgInp.parentElement.nextElementSibling.classList.contains(
+                "hidden"
+              )
             ) {
-              imgInp.parentElement.nextElementSibling.classList.remove("hidden");
+              imgInp.parentElement.nextElementSibling.classList.remove(
+                "hidden"
+              );
             }
 
-            document.querySelector(`#img-show-${imgInp.id}`).classList.add("w-48");
-            document.querySelector(`#img-show-${imgInp.id}`).classList.add("h-48");
+            document
+              .querySelector(`#img-show-${imgInp.id}`)
+              .classList.add("w-48");
+            document
+              .querySelector(`#img-show-${imgInp.id}`)
+              .classList.add("h-48");
             document
               .querySelector(`#img-show-${imgInp.id}`)
               .classList.add("shadow-lg");
@@ -260,6 +268,25 @@ proceed.addEventListener("click", () => {
 
   if (page !== 1) {
     back.classList.remove("tr");
+  }
+
+  if (page === 5) {
+    for (
+      let i = 0;
+      i < document.querySelectorAll("input[name='role-name']").length;
+      i++
+    ) {
+      let obj = {};
+
+      obj["name"] = document.querySelectorAll("input[name='role-name']")[
+        i
+      ].value;
+      obj["desc"] = document.querySelectorAll("textarea[name='role-desc']")[
+        i
+      ].value;
+
+      roles.push(obj);
+    }
   }
 
   if (page === 6) {
@@ -298,19 +325,20 @@ for (let btn of document.querySelectorAll("form button")) {
 
 // SEND DATA
 async function sendData() {
-  
   const body = JSON.stringify({
-    title, description, tags, links, media, roles
+    title,
+    description,
+    tags,
+    links,
+    media,
+    roles,
   });
 
-  const resp = await fetch(
-    `http://localhost:5000/create?accessToken=hello`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: body,
-    }
-  );
+  const resp = await fetch(`http://localhost:5000/create?accessToken=hello`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: body,
+  });
   const jsonResp = await resp.json();
 
   if (jsonResp.success) {
