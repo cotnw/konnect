@@ -26,7 +26,7 @@ router.get('/google/callback', async(req, res) => {
             if (user) {
                 user.access_token = response.data.access_token
                 await user.save()
-                res.redirect(`/setup?access_token=${response.data.access_token}`)
+                res.redirect(`/register?access_token=${response.data.access_token}`)
             } else {
                 let newUser = new User({
                     name: profileRes.data.name,
@@ -36,7 +36,7 @@ router.get('/google/callback', async(req, res) => {
                     pfp_url: profileRes.data.picture
                 })
                 await newUser.save()
-                res.redirect(`/setup?accessToken=${response.data.access_token}`)
+                res.redirect(`/register?accessToken=${response.data.access_token}`)
             }
         })
     })
