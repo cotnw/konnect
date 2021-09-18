@@ -4,7 +4,7 @@ const Project = require("../models/Project");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.render("index");
+    res.redirect("/dashboard");
 });
 
 router.get("/register", async(req, res) => {
@@ -16,7 +16,7 @@ router.get("/registered", async(req, res) => {
 });
 
 router.post("/register", async(req, res) => {
-    let user = await User.findOne({ access_token: req.body.access_token });
+    let user = await User.findOne({ access_token: req.query.access_token });
     if (user) {
         user.skills = req.body.skills;
         user.title = req.body.title;
@@ -38,18 +38,18 @@ router.get("/create", (req, res) => {
     res.render("createProject");
 });
 
-router.post("/create", async (req, res) => {
-  const project = new Project({
-    title: req.body.title,
-    description: req.body.description,
-    tags: req.body.tags,
-    roles: req.body.roles,
-    links: req.body.links,
-    media: req.body.media,
-    accessToken: req.query.accessToken,
-  })
-  await project.save();
-  res.json({ success: true, message: "Project created." });
+router.post("/create", async(req, res) => {
+    const project = new Project({
+        title: req.body.title,
+        description: req.body.description,
+        tags: req.body.tags,
+        roles: req.body.roles,
+        links: req.body.links,
+        media: req.body.media,
+        accessToken: req.query.accessToken,
+    })
+    await project.save();
+    res.json({ success: true, message: "Project created." });
 });
 
 router.get("/project", (req, res) => {
