@@ -147,13 +147,32 @@ back.addEventListener("click", () => {
 
 // SEND DATA
 async function sendData() {
-  const body = {
+  const body = JSON.stringify({
     skills,
     portfolio: links,
     title,
     about: document.querySelector("textarea[name='desc']").value,
     contact_email: document.querySelector("input[name='mail']").value,
-  };
+  });
 
-  console.log(body);
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get("accessToken");
+
+  const resp = await fetch(
+    `http://localhost:5000/register?accessToken=${token}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: body,
+    }
+  );
+  const jsonResp = await resp.json();
+
+  if (jsonResp.success) {
+    setTimeout(() => {
+      $("#success")[0].click();
+    }, 3000);
+  } else {
+    // $("#err")[0].click();
+  }
 }
