@@ -37,6 +37,10 @@ router.get("/create", (req, res) => {
   res.render("createProject");
 });
 
+router.post("/create", (req, res) => {
+  // CODE HERE
+});
+
 router.get("/project", (req, res) => {
   res.render("project");
 });
