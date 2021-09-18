@@ -1,7 +1,6 @@
 const express = require("express");
 const User = require("../models/User");
 const router = express.Router();
-const axios = require("axios");
 
 router.get("/", (req, res) => {
     res.send("Landing here");
@@ -24,6 +23,10 @@ router.post('/register', async(req, res) => {
     } else {
         res.json({ success: false, message: 'Access Token invalid.' })
     }
+})
+
+router.get('/dashboard', (req, res) => {
+    res.render("dashboard")
 })
 
 module.exports = router;

@@ -1,32 +1,32 @@
 {
-  "name": "konnect",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/cotnw/konnect",
-  "author": "Vedanta Somnathe <vedusom142005@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "autoprefixer": "^10.3.4",
-    "axios": "^0.21.4",
-    "bcrypt": "^5.0.1",
-    "cookie-parser": "^1.4.5",
-    "dotenv": "^10.0.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "gridfs-stream": "^1.1.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.6",
-    "multer": "^1.4.3",
-    "multer-gridfs-storage": "^5.0.1",
-    "querystring": "^0.2.1",
-    "tailwindcss": "^2.2.15"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  },
-  "scripts": {
-    "start": "node main",
-    "dev": "nodemon main",
-    "build:css": "npx tailwindcss build ./public/css/main.css -o ./public/css/output.css"
-  }
+    "name": "konnect",
+    "version": "1.0.0",
+    "main": "main.js",
+    "repository": "https://github.com/cotnw/konnect",
+    "author": "Vedanta Somnathe <vedusom142005@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "autoprefixer": "^10.3.4",
+        "axios": "^0.21.4",
+        "bcrypt": "^5.0.1",
+        "cookie-parser": "^1.4.5",
+        "dotenv": "^10.0.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "gridfs-stream": "^1.1.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.0.6",
+        "multer": "^1.4.3",
+        "multer-gridfs-storage": "^5.0.1",
+        "querystring": "^0.2.1",
+        "tailwindcss": "^2.2.15"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12"
+    },
+    "scripts": {
+        "start": "node main.js",
+        "dev": "nodemon main.js",
+        "build:css": "npx tailwindcss build ./public/css/main.css -o ./public/css/output.css"
+    }
 }
