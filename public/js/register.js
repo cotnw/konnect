@@ -5,6 +5,8 @@ const back = document.querySelector("#back");
 let page = 1; // 5 is the limit
 let title;
 
+// 
+
 // PAGE 1
 for (let skill of document.querySelectorAll(".skill")) {
   skill.addEventListener("click", () => {

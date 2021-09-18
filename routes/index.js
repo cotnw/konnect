@@ -2,10 +2,6 @@ const express = require("express");
 const User = require("../models/User");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("index");
-});
-
 router.get("/register", async (req, res) => {
   res.render("register");
 });
@@ -29,7 +25,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.get("/dashboard", (req, res) => {
+router.get("/", (req, res) => {
   res.render("dashboard");
 });
 

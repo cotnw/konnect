@@ -31,6 +31,7 @@ nav.bottom {
 }
 .skill-active {
   border: 2px solid #6067ed;
+  color: #6067ed;
   background: rgba(96, 103, 237, 0.1);
 }
 .block-sec {
@@ -100,6 +101,9 @@ input[type="file"] {
   padding: 1vh 3vw;
   cursor: pointer;
 } */
+.hidden {
+  display: none !important;
+}
 @keyframes remove {
   0% {
     transform: translate(0);
