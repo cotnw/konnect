@@ -1,7 +1,6 @@
 const express = require("express");
 const User = require("../models/User");
 const router = express.Router();
-const axios = require("axios");
 
 router.get("/", (req, res) => {
   res.send("Landing here");
@@ -40,5 +39,9 @@ async function checkAuth(req, res, next) {
     res.redirect("/err");
   }
 }
+
+router.get("/dashboard", (req, res) => {
+  res.render("dashboard");
+});
 
 module.exports = router;
