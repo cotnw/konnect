@@ -29,6 +29,10 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.get("/dashboard", (req, res) => {
+  res.render("dashboard");
+});
+
 async function checkAuth(req, res, next) {
   const accessToken = req.query.accessToken;
   const user = await User.findOne({ access_token: accessToken });
@@ -39,9 +43,5 @@ async function checkAuth(req, res, next) {
     res.redirect("/err");
   }
 }
-
-router.get("/dashboard", (req, res) => {
-  res.render("dashboard");
-});
 
 module.exports = router;

@@ -136,7 +136,7 @@ back.addEventListener("click", () => {
   page--;
   setTimeout(() => {
     document.querySelector(`.page-${page}`).classList.remove("remove");
-  }, 500);
+  }, 1000);
 
   if (page === 1) {
     back.classList.add("tr");

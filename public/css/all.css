@@ -34,6 +34,9 @@ nav.bottom {
   opacity: 1;
   transition: all 0.5s;
 }
+.block-sec::-webkit-scrollbar {
+  display: none;
+}
 .page-2,
 .page-3,
 .page-4,
