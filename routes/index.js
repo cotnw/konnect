@@ -3,7 +3,7 @@ const User = require("../models/User");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("Landing here");
+  res.render("index");
 });
 
 router.get("/register", async (req, res) => {
@@ -35,6 +35,10 @@ router.get("/dashboard", (req, res) => {
 
 router.get("/create", (req, res) => {
   res.render("createProject");
+});
+
+router.get("/project", (req, res) => {
+  res.render("project");
 });
 
 async function checkAuth(req, res, next) {
