@@ -33,6 +33,10 @@ router.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
+router.get("/create", (req, res) => {
+  res.render("createProject");
+});
+
 async function checkAuth(req, res, next) {
   const accessToken = req.query.accessToken;
   const user = await User.findOne({ access_token: accessToken });

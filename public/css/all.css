@@ -1,6 +1,9 @@
 * {
   outline: 0;
 }
+img {
+  object-fit: cover;
+}
 .cont {
   width: 100%;
   padding-left: 6vw;
@@ -76,6 +79,27 @@ nav.bottom button {
   transform: translate(0, 20%);
   opacity: 0;
 }
+.link-field {
+  background: rgba(96, 103, 237, 0.1) !important;
+}
+.link-field input {
+  background: transparent;
+}
+/* .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+input[type="file"] {
+  color: #f9f9f9;
+}
+.custom-file-input::before {
+  content: "Upload";
+  display: inline-block;
+  color: white;
+  background: #6067ed;
+  border-radius: 10px;
+  padding: 1vh 3vw;
+  cursor: pointer;
+} */
 @keyframes remove {
   0% {
     transform: translate(0);

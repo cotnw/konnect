@@ -64,6 +64,7 @@ for (let add of document.querySelectorAll(".add-link")) {
     add.previousElementSibling.children[0].value = "";
 
     let rem = inpHold.children[1];
+    inpHold.children[0].classList.add("link-field");
 
     rem.children[0].setAttribute("src", "/assets/dust.svg");
     rem.classList.remove("add-link");
