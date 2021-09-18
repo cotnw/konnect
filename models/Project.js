@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ProjectSchema = new Schema({
-    name: {
+    title: {
         type: String,
         required: true
     },
-    author: {
+    accessToken: {
         type: String,
         required: true
     },

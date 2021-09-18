@@ -1,13 +1,17 @@
 let tags = [];
 let links = [];
+let media = [];
 const proceed = document.querySelector("#proceed");
 const back = document.querySelector("#back");
 let page = 1; // 6 is the limit
 let title;
+let description;
+let roles = [];
 
 // PAGE 1
 document.querySelector("input[name='title']").addEventListener("keyup", () => {
   if (document.querySelector("input[name='title']").value !== "") {
+    title = document.querySelector("input[name='title']").value;
     proceed.classList.remove("disabled");
   } else {
     proceed.classList.add("disabled");
@@ -19,6 +23,7 @@ document
   .querySelector("textarea[name='desc']")
   .addEventListener("keyup", () => {
     if (document.querySelector("textarea[name='desc']").value !== "") {
+      description = document.querySelector("textarea[name='desc']").value;
       proceed.classList.remove("disabled");
     } else {
       proceed.classList.add("disabled");
@@ -200,21 +205,45 @@ for (let imgInp of imgInps) {
   imgInp.onchange = (evt) => {
     const [file] = imgInp.files;
     if (file) {
-      document.querySelector(`#img-show-${imgInp.id}`).src =
-        URL.createObjectURL(file);
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        const b64 = reader.result.split("base64,")[1];
+        fetch("https://techcircuit.herokuapp.com/image/upload", {
+          // Adding method type
+          method: "POST",
 
-      imgInp.parentElement.classList.add("hidden");
-      if (
-        imgInp.parentElement.nextElementSibling.classList.contains("hidden")
-      ) {
-        imgInp.parentElement.nextElementSibling.classList.remove("hidden");
-      }
+          // Adding body or contents to send
+          body: JSON.stringify({
+            b64,
+          }),
 
-      document.querySelector(`#img-show-${imgInp.id}`).classList.add("w-48");
-      document.querySelector(`#img-show-${imgInp.id}`).classList.add("h-48");
-      document
-        .querySelector(`#img-show-${imgInp.id}`)
-        .classList.add("shadow-lg");
+          // Adding headers to the request
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Access-Control-Allow-Origin": "*",
+          },
+        })
+          .then(async (response) => {
+            const resp = await response.json();
+            console.log(resp.link)
+            document.querySelector(`#img-show-${imgInp.id}`).src = resp.link
+            media.push(resp.link);
+            imgInp.parentElement.classList.add("hidden");
+            if (
+              imgInp.parentElement.nextElementSibling.classList.contains("hidden")
+            ) {
+              imgInp.parentElement.nextElementSibling.classList.remove("hidden");
+            }
+
+            document.querySelector(`#img-show-${imgInp.id}`).classList.add("w-48");
+            document.querySelector(`#img-show-${imgInp.id}`).classList.add("h-48");
+            document
+              .querySelector(`#img-show-${imgInp.id}`)
+              .classList.add("shadow-lg");
+          })
+          .catch((error) => console.log(error));
+      };
     }
   };
 }
@@ -242,8 +271,7 @@ proceed.addEventListener("click", () => {
     document.querySelector(`.page-5`).classList.add("remove");
     document.querySelector("aside").classList.add("bye-rt");
     document.querySelector("nav").classList.add("bye-bt");
-
-    // SUBMIT FORM
+    sendData();
   }
 });
 
@@ -269,33 +297,26 @@ for (let btn of document.querySelectorAll("form button")) {
 }
 
 // SEND DATA
-// async function sendData() {
-//   const body = JSON.stringify({
-//     skills: tags,
-//     portfolio: links,
-//     title,
-//     about: document.querySelector("textarea[name='desc']").value,
-//     contact_email: document.querySelector("input[name='mail']").value,
-//   });
+async function sendData() {
+  
+  const body = JSON.stringify({
+    title, description, tags, links, media, roles
+  });
 
-//   const urlParams = new URLSearchParams(window.location.search);
-//   const token = urlParams.get("accessToken");
+  const resp = await fetch(
+    `http://localhost:5000/create?accessToken=hello`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: body,
+    }
+  );
+  const jsonResp = await resp.json();
 
-//   const resp = await fetch(
-//     `http://localhost:5000/register?accessToken=${token}`,
-//     {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: body,
-//     }
-//   );
-//   const jsonResp = await resp.json();
-
-//   if (jsonResp.success) {
-//     setTimeout(() => {
-//       $("#success")[0].click();
-//     }, 3000);
-//   } else {
-//     // $("#err")[0].click();
-//   }
-// }
+  if (jsonResp.success) {
+    alert("Created project successfully!");
+    window.location.href = `/`;
+  } else {
+    // $("#err")[0].click();
+  }
+}

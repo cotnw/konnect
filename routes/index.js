@@ -1,5 +1,6 @@
 const express = require("express");
 const User = require("../models/User");
+const Project = require("../models/Project");
 const router = express.Router();
 
 router.get("/register", async (req, res) => {
@@ -33,8 +34,18 @@ router.get("/create", (req, res) => {
   res.render("createProject");
 });
 
-router.post("/create", (req, res) => {
-  // CODE HERE
+router.post("/create", async (req, res) => {
+  const project = new Project({
+    title: req.body.title,
+    description: req.body.description,
+    tags: req.body.tags,
+    roles: req.body.roles,
+    links: req.body.links,
+    media: req.body.media,
+    accessToken: req.query.accessToken,
+  })
+  await project.save();
+  res.json({ success: true, message: "Project created." });
 });
 
 router.get("/project", (req, res) => {
