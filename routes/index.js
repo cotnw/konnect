@@ -64,6 +64,10 @@ router.get("/profile", (req, res) => {
     res.render("profile");
 });
 
+router.get("/admin", (req, res) => {
+    res.render("admin");
+});
+
 async function checkAuth(req, res, next) {
     const accessToken = req.query.accessToken;
     const user = await User.findOne({ access_token: accessToken });
