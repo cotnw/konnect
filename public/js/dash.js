@@ -24,6 +24,8 @@ search.addEventListener("keyup", (e) => {
         document.querySelector(".main h1").textContent =
             "Project matches for you";
 
+        document.querySelector(".create-anchor").classList.remove("hidden");
+        document.querySelector(".create-button").classList.remove("hidden");
         document.querySelector(".switch-btns").classList.add("hidden");
 
         document.querySelector("users").classList.add("hidden");
@@ -36,6 +38,8 @@ search.addEventListener("keyup", (e) => {
         }
 
         document.querySelector(".switch-btns").classList.remove("hidden");
+        document.querySelector(".create-anchor").classList.add("hidden");
+        document.querySelector(".create-button").classList.add("hidden");
 
         document.querySelector(
             ".main h1"

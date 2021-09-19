@@ -7,15 +7,15 @@ router.get("/", (req, res) => {
     res.redirect("/dashboard");
 });
 
-router.get("/register", async (req, res) => {
+router.get("/register", async(req, res) => {
     res.render("register");
 });
 
-router.get("/registered", async (req, res) => {
+router.get("/registered", async(req, res) => {
     res.render("registered");
 });
 
-router.post("/register", async (req, res) => {
+router.post("/register", async(req, res) => {
     let user = await User.findOne({ access_token: req.query.access_token });
     if (user) {
         user.skills = req.body.skills;
@@ -30,10 +30,14 @@ router.post("/register", async (req, res) => {
     }
 });
 
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard", async(req, res) => {
+    let projects = await Project.find({})
+    for (i = 0; i < projects.length; i++) {
+        let user = await User.findOne({ access_token: projects[i].access_token });
+        projects[i].user = user;
+    }
     res.render("dashboard", {
-        authed: true,
-        user: { pfp_url: "/assets/search.svg" },
+        projects: projects,
     });
 });
 
@@ -41,7 +45,7 @@ router.get("/create", (req, res) => {
     res.render("createProject");
 });
 
-router.post("/create", async (req, res) => {
+router.post("/create", async(req, res) => {
     console.log(req.body.roles);
     const project = new Project({
         title: req.body.title,
@@ -50,7 +54,7 @@ router.post("/create", async (req, res) => {
         roles: req.body.roles,
         links: req.body.links,
         media: req.body.media,
-        accessToken: req.query.accessToken,
+        access_token: req.query.access_token,
     });
     await project.save();
     res.json({ success: true, message: "Project created." });
@@ -72,11 +76,13 @@ async function checkAuth(req, res, next) {
     const accessToken = req.query.accessToken;
     const user = await User.findOne({ access_token: accessToken });
 
+router.get("/pfp", async(req, res) => {
+    let user = await User.findOne({ access_token: req.query.access_token });
     if (user) {
-        next();
+        res.redirect(user.pfp_url)
     } else {
-        res.redirect("/err");
+        res.sendStatus(404);
     }
-}
+})
 
 module.exports = router;

@@ -6,7 +6,7 @@ const ProjectSchema = new Schema({
         type: String,
         required: true
     },
-    accessToken: {
+    access_token: {
         type: String,
         required: true
     },
