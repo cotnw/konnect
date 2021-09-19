@@ -68,6 +68,17 @@ router.get("/project/:id", async(req, res) => {
     res.render("project", { project: project, user: user });
 });
 
+router.get("/projects", async(req, res) => {
+    let projects = await Project.find({});
+    for (i = 0; i < projects.length; i++) {
+        let user = await User.findOne({
+            access_token: projects[i].access_token,
+        });
+        projects[i].user = user;
+    }
+    res.render("myProjects", { projects });
+});
+
 router.get("/profile", async(req, res) => {
     let user = await User.findOne({ access_token: req.cookies.access_token });
     res.render("profile", { user: user });
