@@ -127,7 +127,7 @@
                 py-4
                 bg-purple
             ">
-        <img src="/assets/logo.svg" alt="logo" class="w-1/12" />
+        <img onclick="location.href = '/dashboard'" style="cursor: pointer;" src="/assets/logo.svg" alt="logo" class="w-1/12" />
         <div class="
                     input
                     flex
@@ -257,7 +257,8 @@
                     items-center
                     hidden
                 ">
-            <a href="/" class="
+            <% for (let l = 0; l<users.length; l++) {%>
+                <a href="/user/<%= users[l]._id%>" class="
                         user
                         flex flex-col
                         items-center
@@ -268,50 +269,16 @@
                         rounded-t-sm
                         mb-10
                     ">
-                <img src="/assets/hand.svg" class="mb-7 w-28 h-28 rounded-full" alt="" />
+                <img src="<%= users[l].pfp_url %>" class="mb-7 w-28 h-28 rounded-full" alt="" />
                 <h1 class="text-purple text-xl font-medium text-center mb-5">
-                    Ishaan Das
+                    <%= users[l].name %>
                 </h1>
-                <h2 class="text-lg">UI/UX Designer</h2>
+                <h2 class="text-lg"><%= users[l].title %></h2>
             </a>
-            <a href="/" class="
-                        user
-                        flex flex-col
-                        items-center
-                        w-1/6
-                        mr-10
-                        p-10
-                        shadow-lg
-                        rounded-t-sm
-                        mb-10
-                    ">
-                <img src="/assets/hand.svg" class="mb-7 w-28 h-28 rounded-full" alt="" />
-                <h1 class="text-purple text-xl font-medium text-center mb-5">
-                    unique
-                </h1>
-                <h2 class="text-lg">UI/UX Designer</h2>
-            </a>
-            <a href="/" class="
-                        user
-                        flex flex-col
-                        items-center
-                        w-1/6
-                        mr-10
-                        p-10
-                        shadow-lg
-                        rounded-t-sm
-                        mb-10
-                    ">
-                <img src="/assets/hand.svg" class="mb-7 w-28 h-28 rounded-full" alt="" />
-                <h1 class="text-purple text-xl font-medium text-center mb-5">
-                    Ishaan Das
-                </h1>
-                <h2 class="text-lg">UI/UX Designer</h2>
-            </a>
+                <% } %>
         </div>
-    </div>
-    <script src="/js/login.js"></script>
-    <script src="/js/dash.js"></script>
+        <script src="/js/login.js"></script>
+        <script src="/js/dash.js"></script>
 </body>
 
 </html>

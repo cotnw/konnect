@@ -109,7 +109,7 @@
                 py-4
                 bg-purple
             ">
-        <img src="/assets/logo.svg" alt="logo" class="w-1/12" />
+        <img onclick="location.href = '/dashboard'" style="cursor: pointer;" src="/assets/logo.svg" alt="logo" class="w-1/12" />
         <div class="
                     input
                     flex
@@ -160,10 +160,12 @@
             <h2 class="email">
                 <%= user.contact_email %>
             </h2>
-            <div class="buttons">
-                <button>Your Projects</button>
-                <button>Joined Projects</button>
-            </div>
+            <% if (profile) { %>
+                <div class="buttons">
+                    <button onclick="location.href='/projects'">Your Projects</button>
+                    <button onclick="location.href='/joinedprojects'">Joined Projects</button>
+                </div>
+                <% } %>
         </div>
         <div class="info">
             <h1>Skills</h1>

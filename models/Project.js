@@ -29,6 +29,10 @@ const ProjectSchema = new Schema({
     roles: {
         type: Array,
         required: false
+    },
+    members: {
+        type: Array,
+        default: []
     }
 });
 

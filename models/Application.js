@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ApplicationSchema = new Schema({
-    accessToken: {
+    access_token: {
         type: String,
         required: true,
     },
-    projectID: {
+    project_id: {
         type: String,
         required: true,
     },
@@ -14,7 +14,11 @@ const ApplicationSchema = new Schema({
         type: Object,
         required: true,
     },
-    dateCreated: {
+    role_id: {
+        type: Number,
+        required: true
+    },
+    date_created: {
         type: Date,
         default: Date.now(),
     },
