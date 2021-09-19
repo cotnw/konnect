@@ -10,19 +10,10 @@
     <link rel="stylesheet" href="/css/all.css" />
     <link rel="stylesheet" href="/css/output.css" />
     <title>Dashboard</title>
-</head>
 
-<script>
-    const urlParams = new URLSearchParams(window.location.search);
-    let token = urlParams.get("access_token");
-    if (token) {
-        localStorage.setItem("access_token", token);
-    }
-</script>
-
-<style>
+    <style>
     .main {
-        padding-top: 5rem;
+        padding-top: 2rem;
         padding-left: 7rem;
         padding-right: 7rem;
     }
@@ -115,6 +106,7 @@
         margin-left: auto;
     }
 </style>
+</head>
 
 <body class="bg-gray w-screen overflow-x-hidden">
     <nav class="
@@ -163,12 +155,12 @@
         </div>
     </nav>
 
+    <div class="back-nav w-screen shadow-lg bg-white cont py-4">
+        <a href="/"><img src="/assets/back.svg" class="w-10" alt=""></a>
+    </div>
+
     <div class="main pb-20">
         <div class="w-full flex items-center">
-            <h1 style="font-size: 24px; font-weight: 600" class="mr-20">
-                Project matches for you
-            </h1>
-            <a class="create-anchor" href="/create"><button class="create-button">Create Project</button></a>
             <div class="flex switch-btns hidden">
                 <button class="
                             btn
@@ -311,5 +303,4 @@
     <script src="/js/login.js"></script>
     <script src="/js/dash.js"></script>
 </body>
-
 </html>

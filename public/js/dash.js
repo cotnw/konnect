@@ -93,3 +93,9 @@ for (let btn of document.querySelectorAll(".switch-btns .btn")) {
         btn.classList.add("switch-btn-active");
     });
 }
+
+for (let desc of document.querySelectorAll(".description")) {
+    if (desc.textContent.length > 300) {
+        desc.textContent = desc.textContent.slice(0, 300) + "......";
+    }
+}
