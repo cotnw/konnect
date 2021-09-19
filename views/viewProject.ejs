@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=DM Sans:100,200,300,400,500,600,700,800,900"
+        />
+        <link rel="icon" href="/assets/icon.png" />
+        <link rel="stylesheet" href="/css/all.css" />
+        <link rel="stylesheet" href="/css/output.css" />
+        <title>Konnect - View Project</title>
+    </head>
+    <body class="bg-gray w-screen overflow-x-hidden">
+        <nav
+            class="
+                cont
+                w-screen
+                flex
+                justify-between
+                items-center
+                py-4
+                bg-purple
+            "
+        >
+            <img src="/assets/logo.svg" alt="logo" class="w-1/12" />
+            <div
+                class="
+                    input
+                    flex
+                    w-1/3
+                    bg-white
+                    rounded-md
+                    h-full
+                    p-3
+                    pl-4
+                    shadow-md
+                "
+            >
+                <input
+                    type="text"
+                    placeholder="Search for Projects, Commu..."
+                    class="w-full text-lg pl-2"
+                    id="search"
+                />
+                <img
+                    src="/assets/search.svg"
+                    alt="search icon"
+                    class="w-6 h-6 object-contain mr-4"
+                />
+            </div>
+            <a id="nav-login-anchor" href="/auth/google">
+                <button
+                    class="
+                        px-10
+                        py-2
+                        flex
+                        rounded-md
+                        justify-center
+                        items-center
+                        text-lg
+                        shadow-lg
+                        bg-white
+                        text-purple
+                    "
+                >
+                    Login
+                </button>
+            </a>
+            <div class="prof flex">
+                <a href="/profile"
+                    ><img src="" class="w-8 h-8 rounded-full mr-4" alt=""
+                /></a>
+                <img
+                    style="cursor: pointer"
+                    src="/assets/logout.svg"
+                    class="w-8 h-8 object-contain"
+                    alt=""
+                />
+            </div>
+        </nav>
+
+        <div class="cont w-screen bg-white shadow-lg">
+            <img src="/assets/back.svg" alt="" class="w-8" />
+        </div>
+    </body>
+</html>
