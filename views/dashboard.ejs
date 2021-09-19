@@ -1,110 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=DM Sans:100,200,300,400,500,600,700,800,900"
-        />
-        <link rel="icon" href="/assets/icon.png" />
-        <link rel="stylesheet" href="/css/all.css" />
-        <link rel="stylesheet" href="/css/output.css" />
-        <title>Dashboard</title>
-    </head>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        let token = urlParams.get("access_token");
-        if (token) {
-            localStorage.setItem("access_token", token);
-        }
-    </script>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Sans:100,200,300,400,500,600,700,800,900" />
+    <link rel="icon" href="/assets/icon.png" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <title>Dashboard</title>
+</head>
 
-    <style>
-        .main {
-            padding-top: 5rem;
-            padding-left: 7rem;
-            padding-right: 7rem;
-        }
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    let token = urlParams.get("access_token");
+    if (token) {
+        localStorage.setItem("access_token", token);
+    }
+</script>
 
-        .projects {
-            margin-top: 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, 40%);
-            grid-gap: 45px;
-        }
+<style>
+    .main {
+        padding-top: 5rem;
+        padding-left: 7rem;
+        padding-right: 7rem;
+    }
+    
+    .projects {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 40%);
+        grid-gap: 45px;
+    }
+    
+    .project {
+        width: 100%;
+        height: 30vh;
+        background: #ffffff;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 6px;
+        transition: all 0.5s;
+        cursor: pointer;
+        padding: 2rem;
+    }
+    
+    .project:hover {
+        background: #ffffff;
+        transition: all 0.5s;
+        box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.25);
+        border-radius: 6px;
+    }
+    
+    .project .title {
+        font-size: 1.4vw;
+        font-weight: 500;
+        color: rgba(96, 103, 237, 1);
+    }
+    
+    .project .tags {
+        font-size: 1vw;
+        color: #717171;
+    }
+    
+    .project .roles {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        color: #717171;
+        font-size: 1vw;
+    }
+    
+    .project a {
+        color: rgba(96, 103, 237, 1);
+        font-size: 1vw;
+    }
+    
+    .project b {
+        font-weight: 500;
+    }
+    
+    .project .description {
+        font-size: 1vw;
+        line-height: 23px;
+        color: #717171;
+    }
+    
+    .project .author {
+        float: right;
+        font-size: 1vw;
+        line-height: 23px;
+        color: #717171;
+    }
+    
+    .switch-btn-active {
+        color: #fff;
+        background-color: #6067ed;
+    }
+    
+    .switch-btns .btn {
+        transition: all 0.2s;
+    }
+    
+    .create-button {
+        background: #6067ED;
+        border-radius: 8px;
+        margin-left: auto;
+        font-weight: 500;
+        font-size: 1.8vh;
+        color: #fff;
+        padding: 1vh 2vh;
+    }
+    
+    .create-anchor {
+        margin-left: auto;
+    }
+</style>
 
-        .project {
-            width: 100%;
-            height: 30vh;
-            background: #ffffff;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-            border-radius: 6px;
-            transition: all 0.5s;
-            cursor: pointer;
-            padding: 2rem;
-        }
-
-        .project:hover {
-            background: #ffffff;
-            transition: all 0.5s;
-            box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.25);
-            border-radius: 6px;
-        }
-
-        .project .title {
-            font-size: 1.4vw;
-            font-weight: 500;
-            color: rgba(96, 103, 237, 1);
-        }
-
-        .project .tags {
-            font-size: 1vw;
-            color: #717171;
-        }
-
-        .project .roles {
-            margin-top: 2vh;
-            margin-bottom: 2vh;
-            color: #717171;
-            font-size: 1vw;
-        }
-
-        .project a {
-            color: rgba(96, 103, 237, 1);
-            font-size: 1vw;
-        }
-
-        .project b {
-            font-weight: 500;
-        }
-
-        .project .description {
-            font-size: 1vw;
-            line-height: 23px;
-            color: #717171;
-        }
-
-        .project .author {
-            float: right;
-            font-size: 1vw;
-            line-height: 23px;
-            color: #717171;
-        }
-        .switch-btn-active {
-            color: #fff;
-            background-color: #6067ed;
-        }
-        .switch-btns .btn {
-            transition: all 0.2s;
-        }
-    </style>
-
-    <body class="bg-gray w-screen overflow-x-hidden">
-        <nav
-            class="
+<body class="bg-gray w-screen overflow-x-hidden">
+    <nav class="
                 cont
                 w-screen
                 flex
@@ -112,11 +125,9 @@
                 items-center
                 py-4
                 bg-purple
-            "
-        >
-            <img src="/assets/logo.svg" alt="logo" class="w-1/12" />
-            <div
-                class="
+            ">
+        <img src="/assets/logo.svg" alt="logo" class="w-1/12" />
+        <div class="
                     input
                     flex
                     w-1/3
@@ -126,24 +137,12 @@
                     p-3
                     pl-4
                     shadow-md
-                "
-            >
-                <input
-                    type="text"
-                    placeholder="Search for Projects, Commu..."
-                    class="w-full text-lg pl-2"
-                    id="search"
-                />
-                <img
-                    src="/assets/search.svg"
-                    alt="search icon"
-                    class="w-6 h-6 object-contain mr-4"
-                />
-            </div>
-            <% if (!authed) { %>
-            <a href="/auth/google">
-                <button
-                    class="
+                ">
+            <input type="text" placeholder="Search for Projects, Commu..." class="w-full text-lg pl-2" id="search" />
+            <img src="/assets/search.svg" alt="search icon" class="w-6 h-6 object-contain mr-4" />
+        </div>
+        <a id="nav-login-anchor" href="/auth/google">
+            <button class="
                         px-10
                         py-2
                         flex
@@ -154,39 +153,24 @@
                         shadow-lg
                         bg-white
                         text-purple
-                    "
-                >
+                    ">
                     Login
                 </button>
-            </a>
-            <% } else { %>
-            <div class="prof flex">
-                <a href="/profile"
-                    ><img
-                        src="<%= user.pfp_url %>"
-                        class="w-8 h-8 rounded-full mr-4"
-                        alt=""
-                /></a>
-                <a href="/logout">
-                    <img
-                        src="/assets/logout.svg"
-                        class="w-8 h-8 object-contain"
-                        alt=""
-                    />
-                </a>
-            </div>
+        </a>
+        <div class="prof flex">
+            <a href="/profile"><img src="" class="w-8 h-8 rounded-full mr-4" alt="" /></a>
+            <img style="cursor: pointer;" src="/assets/logout.svg" class="w-8 h-8 object-contain" alt="" />
+        </div>
+    </nav>
 
-            <% } %>
-        </nav>
-
-        <div class="main pb-20">
-            <div class="w-full flex items-center">
-                <h1 style="font-size: 24px; font-weight: 600" class="mr-20">
-                    Project matches for you
-                </h1>
-                <div class="flex switch-btns hidden">
-                    <button
-                        class="
+    <div class="main pb-20">
+        <div class="w-full flex items-center">
+            <h1 style="font-size: 24px; font-weight: 600" class="mr-20">
+                Project matches for you
+            </h1>
+            <a class="create-anchor" href="/create"><button class="create-button">Create Project</button></a>
+            <div class="flex switch-btns hidden">
+                <button class="
                             btn
                             flex
                             justify-center
@@ -199,12 +183,10 @@
                             py-2
                             mr-4
                             border-none
-                        "
-                    >
+                        ">
                         Projects
                     </button>
-                    <button
-                        class="
+                <button class="
                             btn
                             flex
                             justify-center
@@ -215,99 +197,56 @@
                             rounded-3xl
                             py-2
                             border-none
-                        "
-                    >
+                        ">
                         People
                     </button>
-                </div>
-            </div>
-            <div class="projects">
-                <div class="project">
-                    <h2 class="author">posted by <a>Ishaan Das</a></h2>
-                    <h1 class="title">unique</h1>
-                    <h2 class="tags">UI/UX, Coding</h2>
-                    <h2 class="roles">
-                        <b>Listed roles:</b> <a>Web Development</a>,
-                        <a>UI Designer</a>
-                    </h2>
-                    <h2 class="description">
-                        <b>Description:</b> Pellentesque et tempor nulla. Fusce
-                        velit urna, finibus ut blandit a, elementum non diam.
-                        Proin sagittis et turpis non ullamcorper. Fusce
-                        sagittis, est vel ullamcorper cursus, urna nisl
-                        imperdiet arcu, ac tempor sem dolor eu leo......
-                    </h2>
-                </div>
-                <div class="project">
-                    <h2 class="author">posted by <a>Ishaan Das</a></h2>
-                    <h1 class="title">Project title</h1>
-                    <h2 class="tags">UI/UX, Coding</h2>
-                    <h2 class="roles">
-                        <b>Listed roles:</b> <a>Web Development</a>,
-                        <a>UI Designer</a>
-                    </h2>
-                    <h2 class="description">
-                        <b>Description:</b> Pellentesque et tempor nulla. Fusce
-                        velit urna, finibus ut blandit a, elementum non diam.
-                        Proin sagittis et turpis non ullamcorper. Fusce
-                        sagittis, est vel ullamcorper cursus, urna nisl
-                        imperdiet arcu, ac tempor sem dolor eu leo......
-                    </h2>
-                </div>
-                <div class="project">
-                    <h2 class="author">posted by <a>Ishaan Das</a></h2>
-                    <h1 class="title">Project title</h1>
-                    <h2 class="tags">UI/UX, Coding</h2>
-                    <h2 class="roles">
-                        <b>Listed roles:</b> <a>Web Development</a>,
-                        <a>UI Designer</a>
-                    </h2>
-                    <h2 class="description">
-                        <b>Description:</b> Pellentesque et tempor nulla. Fusce
-                        velit urna, finibus ut blandit a, elementum non diam.
-                        Proin sagittis et turpis non ullamcorper. Fusce
-                        sagittis, est vel ullamcorper cursus, urna nisl
-                        imperdiet arcu, ac tempor sem dolor eu leo......
-                    </h2>
-                </div>
-                <div class="project">
-                    <h2 class="author">posted by <a>Ishaan Das</a></h2>
-                    <h1 class="title">Project title</h1>
-                    <h2 class="tags">UI/UX, Coding</h2>
-                    <h2 class="roles">
-                        <b>Listed roles:</b> <a>Web Development</a>,
-                        <a>UI Designer</a>
-                    </h2>
-                    <h2 class="description">
-                        <b>Description:</b> Pellentesque et tempor nulla. Fusce
-                        velit urna, finibus ut blandit a, elementum non diam.
-                        Proin sagittis et turpis non ullamcorper. Fusce
-                        sagittis, est vel ullamcorper cursus, urna nisl
-                        imperdiet arcu, ac tempor sem dolor eu leo......
-                    </h2>
-                </div>
-                <div class="project">
-                    <h2 class="author">posted by <a>Ishaan Das</a></h2>
-                    <h1 class="title">Project title</h1>
-                    <h2 class="tags">UI/UX, Coding</h2>
-                    <h2 class="roles">
-                        <b>Listed roles:</b> <a>Web Development</a>,
-                        <a>UI Designer</a>
-                    </h2>
-                    <h2 class="description">
-                        <b>Description:</b> Pellentesque et tempor nulla. Fusce
-                        velit urna, finibus ut blandit a, elementum non diam.
-                        Proin sagittis et turpis non ullamcorper. Fusce
-                        sagittis, est vel ullamcorper cursus, urna nisl
-                        imperdiet arcu, ac tempor sem dolor eu leo......
-                    </h2>
-                </div>
             </div>
         </div>
+        <div class="projects">
+            <% for (let i = 0; i<projects.length; i++) { %>
+                <div class="project">
+                    <h2 class="author">posted by
+                        <a>
+                            <%= projects[i].user.name %>
+                        </a>
+                    </h2>
+                    <h1 class="title">
+                        <%= projects[i].title %>
+                    </h1>
+                    <h2 class="tags">
+                        <% for (let j = 0; j<projects[i].tags.length; j++) { %>
+                            <% if (j+1 != projects[i].tags.length) {%>
+                                <%= projects[i].tags[j]%>,
+                                    <% } else { %>
+                                        <%= projects[i].tags[j]%>
+                                            <% } %>
+                                                <% } %>
+                    </h2>
+                    <h2 class="roles">
+                        <b>Listed roles:</b>
+                        <% for (let k = 0; k<projects[i].roles.length; k++) { %>
+                            <%if (k+1 != projects[i].roles.length) {%>
+                                <a>
+                                    <%= projects[i].roles[k].name%>
+                                </a>,
+                                <% } else { %>
+                                    <a>
+                                        <%= projects[i].roles[k].name%>
+                                    </a>
+                                    <%}%>
+                                        <% } %>
+                    </h2>
+                    <h2 class="description">
+                        <b>Description:</b>
+                        <%= projects[i].description%>
+                    </h2>
+                </div>
+                <% } %>
+        </div>
+    </div>
 
-        <div class="cont">
-            <div
-                class="
+    <div class="cont">
+        <div class="
                     users
                     flex flex-wrap
                     pb-20
@@ -315,11 +254,8 @@
                     justify-start
                     items-center
                     hidden
-                "
-            >
-                <a
-                    href="/"
-                    class="
+                ">
+            <a href="/" class="
                         user
                         flex flex-col
                         items-center
@@ -329,23 +265,14 @@
                         shadow-lg
                         rounded-t-sm
                         mb-10
-                    "
-                >
-                    <img
-                        src="/assets/hand.svg"
-                        class="mb-7 w-28 h-28 rounded-full"
-                        alt=""
-                    />
-                    <h1
-                        class="text-purple text-xl font-medium text-center mb-5"
-                    >
-                        Ishaan Das
-                    </h1>
-                    <h2 class="text-lg">UI/UX Designer</h2>
-                </a>
-                <a
-                    href="/"
-                    class="
+                    ">
+                <img src="/assets/hand.svg" class="mb-7 w-28 h-28 rounded-full" alt="" />
+                <h1 class="text-purple text-xl font-medium text-center mb-5">
+                    Ishaan Das
+                </h1>
+                <h2 class="text-lg">UI/UX Designer</h2>
+            </a>
+            <a href="/" class="
                         user
                         flex flex-col
                         items-center
@@ -355,23 +282,14 @@
                         shadow-lg
                         rounded-t-sm
                         mb-10
-                    "
-                >
-                    <img
-                        src="/assets/hand.svg"
-                        class="mb-7 w-28 h-28 rounded-full"
-                        alt=""
-                    />
-                    <h1
-                        class="text-purple text-xl font-medium text-center mb-5"
-                    >
-                        unique
-                    </h1>
-                    <h2 class="text-lg">UI/UX Designer</h2>
-                </a>
-                <a
-                    href="/"
-                    class="
+                    ">
+                <img src="/assets/hand.svg" class="mb-7 w-28 h-28 rounded-full" alt="" />
+                <h1 class="text-purple text-xl font-medium text-center mb-5">
+                    unique
+                </h1>
+                <h2 class="text-lg">UI/UX Designer</h2>
+            </a>
+            <a href="/" class="
                         user
                         flex flex-col
                         items-center
@@ -381,23 +299,17 @@
                         shadow-lg
                         rounded-t-sm
                         mb-10
-                    "
-                >
-                    <img
-                        src="/assets/hand.svg"
-                        class="mb-7 w-28 h-28 rounded-full"
-                        alt=""
-                    />
-                    <h1
-                        class="text-purple text-xl font-medium text-center mb-5"
-                    >
-                        Ishaan Das
-                    </h1>
-                    <h2 class="text-lg">UI/UX Designer</h2>
-                </a>
-            </div>
+                    ">
+                <img src="/assets/hand.svg" class="mb-7 w-28 h-28 rounded-full" alt="" />
+                <h1 class="text-purple text-xl font-medium text-center mb-5">
+                    Ishaan Das
+                </h1>
+                <h2 class="text-lg">UI/UX Designer</h2>
+            </a>
         </div>
+    </div>
+    <script src="/js/login.js"></script>
+    <script src="/js/dash.js"></script>
+</body>
 
-        <script src="/js/dash.js"></script>
-    </body>
 </html>

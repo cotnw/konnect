@@ -4,7 +4,7 @@ const querystring = require('querystring')
 const User = require('../models/User')
 const router = express.Router()
 
-const baseUrl = 'https://konnect2021.herokuapp.com'
+const baseUrl = process.env.BASE_URL
 
 router.get('/google', async(req, res) => {
     res.redirect(`https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=884360040700-4093n49it73naktrttlljb9ad6ga4jjo.apps.googleusercontent.com&redirect_uri=${baseUrl}/auth/google/callback&scope=profile%20email`)
@@ -27,8 +27,6 @@ router.get('/google/callback', async(req, res) => {
             console.log(profileRes.data)
             let user = await User.findOne({ google_id: profileRes.data.sub })
             if (user) {
-                user.access_token = response.data.access_token
-                await user.save()
                 res.redirect(`/dashboard?access_token=${response.data.access_token}`)
             } else {
                 let newUser = new User({

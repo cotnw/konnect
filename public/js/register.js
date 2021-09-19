@@ -52,8 +52,6 @@ function getMatches(input) {
 
 // SEARCH END
 
-const baseUrl = "https://konnect2021.herokuapp.com";
-
 //
 
 // PAGE 1
@@ -168,9 +166,9 @@ document.querySelector("input[name='mail']").addEventListener("keyup", () => {
 proceed.addEventListener("click", () => {
     document.querySelector(`.page-${page}`).classList.add("remove");
     page++;
-    document.querySelector(`.page-${page}`)
-        ? document.querySelector(`.page-${page}`).classList.remove("hide")
-        : console.log("Submitting form...");
+    document.querySelector(`.page-${page}`) ?
+        document.querySelector(`.page-${page}`).classList.remove("hide") :
+        console.log("Submitting form...");
 
     proceed.classList.add("disabled");
 
@@ -218,7 +216,7 @@ async function sendData() {
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get("access_token");
 
-    const resp = await fetch(`${baseUrl}/register?access_token=${token}`, {
+    const resp = await fetch(`/register?access_token=${token}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: body,
