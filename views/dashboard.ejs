@@ -133,6 +133,7 @@
                     class="w-6 h-6 object-contain mr-4"
                 />
             </div>
+            <% if (!authed) { %>
             <a href="/auth/google">
                 <button
                     class="
@@ -151,6 +152,24 @@
                     Login
                 </button>
             </a>
+            <% } else { %>
+            <div class="prof flex">
+                <a href="/profile"
+                    ><img
+                        src="<%= user.pfp_url %>"
+                        class="w-8 h-8 rounded-full mr-4"
+                        alt=""
+                /></a>
+                <a href="/logout">
+                    <img
+                        src="/assets/logout.svg"
+                        class="w-8 h-8 object-contain"
+                        alt=""
+                    />
+                </a>
+            </div>
+
+            <% } %>
         </nav>
 
         <div class="main pb-20">

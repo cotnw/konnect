@@ -5,9 +5,56 @@ const back = document.querySelector("#back");
 let page = 1; // 5 is the limit
 let title;
 
+// SEARCH
+const search = document.querySelector("#search");
+let titles = [];
+for (let card of document.querySelectorAll(".skill")) {
+    let h2 = card.textContent.toLowerCase();
+    titles.push(h2);
+}
+
+search.addEventListener("keyup", (e) => {
+    let usrInp = search.value.trim();
+    let matches = getMatches(usrInp);
+    if (usrInp == "") {
+        for (let card of document.querySelectorAll(".skill")) {
+            card.classList.remove("hidden");
+        }
+    } else {
+        for (let card of document.querySelectorAll(".skill")) {
+            card.classList.add("hidden");
+        }
+    }
+    for (let match of matches) {
+        for (let title of titles) {
+            if (match == title) {
+                for (let card of document.querySelectorAll(".skill")) {
+                    if (card.textContent.toLowerCase() == title) {
+                        card.classList.remove("hidden");
+                    }
+                }
+            }
+        }
+    }
+});
+
+function getMatches(input) {
+    let matchList = [];
+
+    for (let i = 0; i < titles.length; i++) {
+        if (titles[i].toLowerCase().indexOf(input.toLowerCase()) != -1) {
+            matchList.push(titles[i]);
+        }
+    }
+
+    return matchList;
+}
+
+// SEARCH END
+
 const baseUrl = "https://konnect2021.herokuapp.com";
 
-// 
+//
 
 // PAGE 1
 for (let skill of document.querySelectorAll(".skill")) {
@@ -121,9 +168,9 @@ document.querySelector("input[name='mail']").addEventListener("keyup", () => {
 proceed.addEventListener("click", () => {
     document.querySelector(`.page-${page}`).classList.add("remove");
     page++;
-    document.querySelector(`.page-${page}`) ?
-        document.querySelector(`.page-${page}`).classList.remove("hide") :
-        console.log("Submitting form...");
+    document.querySelector(`.page-${page}`)
+        ? document.querySelector(`.page-${page}`).classList.remove("hide")
+        : console.log("Submitting form...");
 
     proceed.classList.add("disabled");
 
@@ -171,13 +218,11 @@ async function sendData() {
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get("access_token");
 
-    const resp = await fetch(
-        `${baseUrl}/register?access_token=${token}`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: body,
-        }
-    );
+    const resp = await fetch(`${baseUrl}/register?access_token=${token}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: body,
+    });
     const jsonResp = await resp.json();
 
     if (jsonResp.success) {

@@ -31,7 +31,10 @@ router.post("/register", async (req, res) => {
 });
 
 router.get("/dashboard", (req, res) => {
-    res.render("dashboard");
+    res.render("dashboard", {
+        authed: true,
+        user: { pfp_url: "/assets/search.svg" },
+    });
 });
 
 router.get("/create", (req, res) => {

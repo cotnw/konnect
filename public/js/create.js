@@ -8,6 +8,53 @@ let title;
 let description;
 let roles = [];
 
+// SEARCH
+const search = document.querySelector("#search");
+let titles = [];
+for (let card of document.querySelectorAll(".skill")) {
+    let h2 = card.textContent.toLowerCase();
+    titles.push(h2);
+}
+
+search.addEventListener("keyup", (e) => {
+    let usrInp = search.value.trim();
+    let matches = getMatches(usrInp);
+    if (usrInp == "") {
+        for (let card of document.querySelectorAll(".skill")) {
+            card.classList.remove("hidden");
+        }
+    } else {
+        for (let card of document.querySelectorAll(".skill")) {
+            card.classList.add("hidden");
+        }
+    }
+    for (let match of matches) {
+        for (let title of titles) {
+            if (match == title) {
+                for (let card of document.querySelectorAll(".skill")) {
+                    if (card.textContent.toLowerCase() == title) {
+                        card.classList.remove("hidden");
+                    }
+                }
+            }
+        }
+    }
+});
+
+function getMatches(input) {
+    let matchList = [];
+
+    for (let i = 0; i < titles.length; i++) {
+        if (titles[i].toLowerCase().indexOf(input.toLowerCase()) != -1) {
+            matchList.push(titles[i]);
+        }
+    }
+
+    return matchList;
+}
+
+// SEARCH END
+
 // PAGE 1
 document.querySelector("input[name='title']").addEventListener("keyup", () => {
     if (document.querySelector("input[name='title']").value !== "") {
