@@ -147,12 +147,18 @@
     </nav>
     <div class="main">
         <div class="header">
-            <img src="https://github.com/laxyapahuja.png" />
+            <img src="<%= user.pfp_url %>" />
             <div class="nameheader">
-                <h1 class="name">Laxya Pahuja</h1>
-                <h2 class="title">Web Developer</h2>
+                <h1 class="name">
+                    <%= user.name %>
+                </h1>
+                <h2 class="title">
+                    <%= user.title %>
+                </h2>
             </div>
-            <h2 class="email">laxya.pahuja8@gmail.com</h2>
+            <h2 class="email">
+                <%= user.contact_email %>
+            </h2>
             <div class="buttons">
                 <button>Your Projects</button>
                 <button>Joined Projects</button>
@@ -160,7 +166,15 @@
         </div>
         <div class="info">
             <h1>Skills</h1>
-            <h2>UI Design, UX Design, Coding</h2>
+            <h2>
+                <% for (let i = 0; i<user.skills.length; i++) {%>
+                    <% if (i+1 != user.skills.length) {%>
+                        <%= user.skills[i]%>,
+                            <% } else { %>
+                                <%= user.skills[i]%>
+                                    <% } %>
+                                        <%}%>
+            </h2>
             <h1>Links</h1>
             <div class="links">
                 <i class="ri-behance-fill"></i>
@@ -169,9 +183,7 @@
             </div>
             <h1>About Laxya</h1>
             <h2>
-                Pellentesque et tempor nulla. Fusce velit urna, finibus ut blandit a, elementum non diam. Proin sagittis et turpis non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna nisl imperdiet arcu, ac tempor sem dolor eu leo. Integer id porttitor
-                tortor. Suspendisse posuere, dui pretium pellentesque suscipit, erat odio interdum turpis, vel placerat sapien diam quis mauris. Sed ultrices feugiat diam ut convallis. Nulla condimentum tincidunt dui sed tempus. Vestibulum eu aliquam
-                erat. Sed finibus fermentum gravida. In ullamcorper maximus leo, in ullamcorper velit vehicula in.
+                <%= user.about %>
             </h2>
         </div>
     </div>

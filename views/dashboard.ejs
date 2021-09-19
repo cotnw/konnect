@@ -17,6 +17,7 @@
     let token = urlParams.get("access_token");
     if (token) {
         localStorage.setItem("access_token", token);
+        document.cookie = `access_token=${token}`;
     }
 </script>
 
@@ -203,7 +204,7 @@
         </div>
         <div class="projects">
             <% for (let i = 0; i<projects.length; i++) { %>
-                <div class="project">
+                <div class="project" onclick="location.href = '/project/<%= projects[i]._id %>'">
                     <h2 class="author">posted by
                         <a>
                             <%= projects[i].user.name %>

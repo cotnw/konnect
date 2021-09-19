@@ -29,6 +29,8 @@ router.get('/google/callback', async(req, res) => {
             if (user) {
                 res.redirect(`/dashboard?access_token=${user.access_token}`)
             } else {
+                profileRes.data.picture = profileRes.data.picture.slice(0, -4)
+                profileRes.data.picture = `${profileRes.data.picture}1000-c`
                 let newUser = new User({
                     name: profileRes.data.name,
                     email: profileRes.data.email,

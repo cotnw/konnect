@@ -133,11 +133,13 @@
     <div class="main pb-20 inline">
         <div class="left">
             <h1 style="font-size: 1.25vw; font-weight: 600; color: #6067ed">
-                Konnect: Web App
+                <%= project.title %>
             </h1>
             <div class="author">
-                <img src="https://github.com/laxyapahuja.png" style="width: auto; height: 2vw; border-radius: 50%" />
-                <p class="name">Laxya Pahuja</p>
+                <img src="<%= user.pfp_url %>" style="width: auto; height: 2vw; border-radius: 50%" />
+                <p class="name">
+                    <%= user.name %>
+                </p>
             </div>
             <h1 style="
                         font-size: 1.25vw;
@@ -147,7 +149,13 @@
                 Tags
             </h1>
             <p style="font-size: 0.9vw; margin-top: 0.1vw" class="tags">
-                UI Design, UX Design, Coding
+                <% for (let i = 0; i<project.tags.length; i++) { %>
+                    <% if (i+1 != project.tags.length) {%>
+                        <%= project.tags[i]%>,
+                            <% } else { %>
+                                <%= project.tags[i]%>
+                                    <% } %>
+                                        <% } %>
             </p>
             <h1 style="
                         font-size: 1.25vw;
@@ -157,9 +165,7 @@
                 Description
             </h1>
             <p style="font-size: 0.9vw; margin-top: 0.1vw" class="tags">
-                Pellentesque et tempor nulla. Fusce velit urna, finibus ut blandit a, elementum non diam. Proin sagittis et turpis non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna nisl imperdiet arcu, ac tempor sem dolor eu leo. Integer id porttitor
-                tortor. Suspendisse posuere, dui pretium pellentesque suscipit, erat odio interdum turpis, vel placerat sapien diam quis mauris. Sed ultrices feugiat diam ut convallis. Nulla condimentum tincidunt dui sed tempus. Vestibulum eu aliquam
-                erat. Sed finibus fermentum gravida. In ullamcorper maximus leo, in ullamcorper velit vehicula in.
+                <%= project.description %>
             </p>
             <h1 style="
                         font-size: 1.25vw;
@@ -169,22 +175,23 @@
                 Required Roles
             </h1>
             <div class="roles">
-                <div class="role">
-                    <h2 style="
+                <% for (let j = 0; j<project.roles.length; j++) { %>
+                    <div class="role">
+                        <h2 style="
                                 font-size: 1.25vw;
                                 font-weight: 500;
                                 color: #6067ed;
                             ">
-                        Web Developer
-                    </h2>
-                    <p style="
+                            <%= project.roles[j].name %>
+                        </h2>
+                        <p style="
                                 font-size: 0.9vw;
                                 margin-top: 0.2vw;
                                 margin-bottom: 1.5vw;
                             ">
-                        Pellentesque et tempor nulla. Fusce velit urna, finibus ut blandit a, elementum non diam. Proin sagittis et turpis non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna.
-                    </p>
-                    <button class="
+                            <%= project.roles[j].desc %>
+                        </p>
+                        <button class="
                                 px-10
                                 py-1.5
                                 flex
@@ -197,37 +204,8 @@
                             ">
                             Apply
                         </button>
-                </div>
-                <div class="role">
-                    <h2 style="
-                                font-size: 1.25vw;
-                                font-weight: 500;
-                                color: #6067ed;
-                            ">
-                        Web Developer
-                    </h2>
-                    <p style="
-                                font-size: 0.9vw;
-                                margin-top: 0.2vw;
-                                margin-bottom: 1.5vw;
-                            ">
-                        Pellentesque et tempor nulla. Fusce velit urna, finibus ut blandit a, elementum non diam. Proin sagittis et turpis non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna nisl imperdiet arcu, ac tempor sem dolor eu leo. Integer id porttitor
-                        tortor. Suspendisse posuere, dui pretium pellentesque suscipit, erat odio interdum turpis, vel placerat sapien diam quis mauris.
-                    </p>
-                    <button class="
-                                px-10
-                                py-1.5
-                                flex
-                                rounded-md
-                                justify-center
-                                items-center
-                                text-lg
-                                bg-purple
-                                text-white
-                            ">
-                            Apply
-                        </button>
-                </div>
+                    </div>
+                    <% } %>
             </div>
         </div>
         <div class="right">
@@ -235,12 +213,9 @@
                 Project Media
             </h1>
             <div class="media">
-                <img src="https://github.com/laxyapahuja.png" class="media-image" />
-                <img src="https://github.com/laxyapahuja.png" class="media-image" />
-                <img src="https://github.com/laxyapahuja.png" class="media-image" />
-                <img src="https://github.com/laxyapahuja.png" class="media-image" />
-                <img src="https://github.com/laxyapahuja.png" class="media-image" />
-                <img src="https://github.com/laxyapahuja.png" class="media-image" />
+                <% for (let k = 0; k<project.media.length; k++) { %>
+                    <img src="<%= project.media[k] %>" class="media-image" />
+                    <% } %>
             </div>
             <h1 style="
                         font-size: 1.25vw;
@@ -251,14 +226,13 @@
                 Links
             </h1>
             <div class="links">
-                <a href="https://github.com/laxyapahuja" target="_blank" style="font-size: 0.9vw; color: #6067ed">
-                    <p>https://github.com/laxyapahuja</p>
-                </a>
-                <a href="https://www.figma.com/file/9wEcdFEuyEEIik9rctktAI/Konnect?node-id=197%3A619" target="_blank" style="font-size: 0.9vw; color: #6067ed">
-                    <p>
-                        https://www.figma.com/file/9wEcdFEuyEEIik9rctktAI/Konnect?node-id=197%3A619
-                    </p>
-                </a>
+                <% for (let l = 0; l<project.links.length; l++) { %>
+                    <a href="<%= project.links[l] %>" target="_blank" style="font-size: 0.9vw; color: #6067ed">
+                        <p>
+                            <%= project.links[l] %>
+                        </p>
+                    </a>
+                    <% } %>
             </div>
         </div>
     </div>

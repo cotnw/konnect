@@ -17,6 +17,7 @@
     let token = urlParams.get("access_token");
     if (token) {
         localStorage.setItem("access_token", token);
+        document.cookie = `access_token=${token}`;
     }
 </script>
 

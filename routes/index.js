@@ -7,15 +7,15 @@ router.get("/", (req, res) => {
     res.redirect("/dashboard");
 });
 
-router.get("/register", async (req, res) => {
+router.get("/register", async(req, res) => {
     res.render("register");
 });
 
-router.get("/registered", async (req, res) => {
+router.get("/registered", async(req, res) => {
     res.render("registered");
 });
 
-router.post("/register", async (req, res) => {
+router.post("/register", async(req, res) => {
     let user = await User.findOne({ access_token: req.query.access_token });
     if (user) {
         user.skills = req.body.skills;
@@ -30,7 +30,7 @@ router.post("/register", async (req, res) => {
     }
 });
 
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", async(req, res) => {
     let projects = await Project.find({});
     for (i = 0; i < projects.length; i++) {
         let user = await User.findOne({
@@ -47,7 +47,7 @@ router.get("/create", (req, res) => {
     res.render("createProject");
 });
 
-router.post("/create", async (req, res) => {
+router.post("/create", async(req, res) => {
     console.log(req.body.roles);
     const project = new Project({
         title: req.body.title,
@@ -62,12 +62,15 @@ router.post("/create", async (req, res) => {
     res.json({ success: true, message: "Project created." });
 });
 
-router.get("/project", (req, res) => {
-    res.render("project");
+router.get("/project/:id", async(req, res) => {
+    let project = await Project.findOne({ _id: req.params.id });
+    let user = await User.findOne({ access_token: project.access_token });
+    res.render("project", { project: project, user: user });
 });
 
-router.get("/profile", (req, res) => {
-    res.render("profile");
+router.get("/profile", async(req, res) => {
+    let user = await User.findOne({ access_token: req.cookies.access_token });
+    res.render("profile", { user: user });
 });
 
 router.get("/admin", (req, res) => {
@@ -78,7 +81,7 @@ router.get("/view", (req, res) => {
     res.render("viewProject");
 });
 
-router.get("/pfp", async (req, res) => {
+router.get("/pfp", async(req, res) => {
     let user = await User.findOne({ access_token: req.query.access_token });
     if (user) {
         res.redirect(user.pfp_url);
