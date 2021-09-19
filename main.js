@@ -42,5 +42,3 @@ app.use(express.static(__dirname + "/public"));
 // ROUTES
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
-
-// comment for theVedanta github
