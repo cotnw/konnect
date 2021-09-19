@@ -84,11 +84,11 @@ for (let skill of document.querySelectorAll(".skill")) {
         if (!skill.classList.contains("skill-active")) {
             if (tags.length < 5) {
                 skill.classList.add("skill-active");
-                tags.push(skill.textContent);
+                tags.push(skill.textContent.trim());
             }
         } else {
             skill.classList.remove("skill-active");
-            let index = tags.indexOf(skill.textContent);
+            let index = tags.indexOf(skill.textContent.trim());
             tags.splice(index, 1);
         }
 
@@ -122,7 +122,7 @@ for (let inp of document.querySelectorAll(".roles input")) {
         if (
             inp.value !== "" &&
             inp.parentElement.nextElementSibling.nextElementSibling.children[0]
-            .value !== ""
+                .value !== ""
         ) {
             allFill = true;
         } else {
@@ -141,7 +141,7 @@ for (let inp of document.querySelectorAll(".roles textarea")) {
         if (
             inp.value !== "" &&
             inp.parentElement.previousElementSibling.previousElementSibling
-            .children[0].value !== ""
+                .children[0].value !== ""
         ) {
             allFill = true;
         } else {
@@ -165,7 +165,7 @@ document.querySelector(".add-role").addEventListener("click", () => {
         if (
             clone.children[1].children[0].value !== "" &&
             clone.children[1].children[0].parentElement.nextElementSibling
-            .nextElementSibling.children[0].value !== ""
+                .nextElementSibling.children[0].value !== ""
         ) {
             allFill = true;
         } else {
@@ -183,7 +183,7 @@ document.querySelector(".add-role").addEventListener("click", () => {
         if (
             clone.children[3].children[0].value !== "" &&
             clone.children[3].children[0].parentElement.previousElementSibling
-            .previousElementSibling.children[0].value !== ""
+                .previousElementSibling.children[0].value !== ""
         ) {
             allFill = true;
         } else {
@@ -257,21 +257,21 @@ for (let imgInp of imgInps) {
             reader.onload = () => {
                 const b64 = reader.result.split("base64,")[1];
                 fetch("https://techcircuit.herokuapp.com/image/upload", {
-                        // Adding method type
-                        method: "POST",
+                    // Adding method type
+                    method: "POST",
 
-                        // Adding body or contents to send
-                        body: JSON.stringify({
-                            b64,
-                        }),
+                    // Adding body or contents to send
+                    body: JSON.stringify({
+                        b64,
+                    }),
 
-                        // Adding headers to the request
-                        headers: {
-                            "Content-type": "application/json; charset=UTF-8",
-                            "Access-Control-Allow-Origin": "*",
-                        },
-                    })
-                    .then(async(response) => {
+                    // Adding headers to the request
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8",
+                        "Access-Control-Allow-Origin": "*",
+                    },
+                })
+                    .then(async (response) => {
                         const resp = await response.json();
                         console.log(resp.link);
                         document.querySelector(`#img-show-${imgInp.id}`).src =
@@ -308,9 +308,9 @@ for (let imgInp of imgInps) {
 proceed.addEventListener("click", () => {
     document.querySelector(`.page-${page}`).classList.add("remove");
     page++;
-    document.querySelector(`.page-${page}`) ?
-        document.querySelector(`.page-${page}`).classList.remove("hide") :
-        console.log("Submitting form...");
+    document.querySelector(`.page-${page}`)
+        ? document.querySelector(`.page-${page}`).classList.remove("hide")
+        : console.log("Submitting form...");
 
     proceed.classList.add("disabled");
 
@@ -320,7 +320,9 @@ proceed.addEventListener("click", () => {
 
     if (page === 5) {
         for (
-            let i = 0; i < document.querySelectorAll("input[name='role-name']").length; i++
+            let i = 0;
+            i < document.querySelectorAll("input[name='role-name']").length;
+            i++
         ) {
             let obj = {};
 
@@ -380,11 +382,14 @@ async function sendData() {
         roles,
     });
 
-    const resp = await fetch(`/create?access_token=${localStorage.getItem('access_token')}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: body,
-    });
+    const resp = await fetch(
+        `/create?access_token=${localStorage.getItem("access_token")}`,
+        {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: body,
+        }
+    );
     const jsonResp = await resp.json();
 
     if (jsonResp.success) {

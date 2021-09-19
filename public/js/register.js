@@ -61,11 +61,11 @@ for (let skill of document.querySelectorAll(".skill")) {
         if (!skill.classList.contains("skill-active")) {
             if (skills.length < 5) {
                 skill.classList.add("skill-active");
-                skills.push(skill.textContent);
+                skills.push(skill.textContent.trim());
             }
         } else {
             skill.classList.remove("skill-active");
-            let index = skills.indexOf(skill.textContent);
+            let index = skills.indexOf(skill.textContent.trim());
             skills.splice(index, 1);
         }
 
@@ -166,9 +166,9 @@ document.querySelector("input[name='mail']").addEventListener("keyup", () => {
 proceed.addEventListener("click", () => {
     document.querySelector(`.page-${page}`).classList.add("remove");
     page++;
-    document.querySelector(`.page-${page}`) ?
-        document.querySelector(`.page-${page}`).classList.remove("hide") :
-        console.log("Submitting form...");
+    document.querySelector(`.page-${page}`)
+        ? document.querySelector(`.page-${page}`).classList.remove("hide")
+        : console.log("Submitting form...");
 
     proceed.classList.add("disabled");
 
