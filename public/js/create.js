@@ -1,3 +1,8 @@
+const notyf = new Notyf({
+    duration: 1000,
+    position: { x: "right", y: "bottom" },
+});
+
 let tags = [];
 let links = [];
 let media = [];
@@ -393,8 +398,10 @@ async function sendData() {
     const jsonResp = await resp.json();
 
     if (jsonResp.success) {
-        alert("Created project successfully!");
-        window.location.href = `/`;
+        notyf.success("Created project successfully!");
+        setTimeout(() => {
+            window.location.href = `/`;
+        }, 500);
     } else {
         // $("#err")[0].click();
     }

@@ -69,10 +69,15 @@ router.get("/project/:id", async(req, res) => {
     let author = false
     let project = await Project.findOne({ _id: req.params.id });
     let user = await User.findOne({ access_token: project.access_token });
+    let roleID = undefined;
+    let application = await Application.findOne({ project_id: project._id, access_token: req.cookies.access_token });
+    if (application) {
+        roleID = application.role_id;
+    }
     if (project.access_token === req.cookies.access_token) {
         author = true
     }
-    res.render("project", { project: project, user: user, author: author });
+    res.render("project", { project: project, user: user, author: author, roleID: roleID });
 });
 
 router.get('/project/:id/members/:index/remove', async(req, res) => {
@@ -115,7 +120,7 @@ router.post("/project/:id/apply", async(req, res) => {
 
     try {
         await application.save();
-        res.redirect("/dashboard");
+        res.redirect(`/project/${req.params.id}`);
     } catch (err) {
         res.json({ err: "error" });
     }

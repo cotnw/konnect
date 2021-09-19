@@ -193,19 +193,35 @@
                         <input type="number" name="role_id" class="hidden" value="<%= j %>" />
                         <input type="text" name="role" class="hidden" value="<%= project.roles[j].name %>">
                         <input type="text" name="desc" class="hidden" value="<%= project.roles[j].desc %>">
-                        <button type="submit" class="
-                                px-10
-                                py-1.5
-                                flex
-                                rounded-md
-                                justify-center
-                                items-center
-                                text-lg
-                                bg-purple
-                                text-white
-                            ">
-                            Apply
-                        </button>
+                        <% if (j === roleID) { %>
+                            <button disabled style="opacity: 0.5; pointer-events: none;" class="
+                                    px-10
+                                    py-1.5
+                                    flex
+                                    rounded-md
+                                    justify-center
+                                    items-center
+                                    text-lg
+                                    bg-purple
+                                    text-white
+                                ">
+                                Pending
+                            </button>
+                        <% } else { %>
+                            <button type="submit" class="
+                                    px-10
+                                    py-1.5
+                                    flex
+                                    rounded-md
+                                    justify-center
+                                    items-center
+                                    text-lg
+                                    bg-purple
+                                    text-white
+                                ">
+                                Apply
+                            </button>
+                        <% } %>
                     </form>
                     <% } %>
             </div>
