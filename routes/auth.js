@@ -27,7 +27,7 @@ router.get('/google/callback', async(req, res) => {
             console.log(profileRes.data)
             let user = await User.findOne({ google_id: profileRes.data.sub })
             if (user) {
-                res.redirect(`/dashboard?access_token=${response.data.access_token}`)
+                res.redirect(`/dashboard?access_token=${user.access_token}`)
             } else {
                 let newUser = new User({
                     name: profileRes.data.name,
