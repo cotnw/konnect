@@ -7,15 +7,15 @@ router.get("/", (req, res) => {
     res.redirect("/dashboard");
 });
 
-router.get("/register", async(req, res) => {
+router.get("/register", async (req, res) => {
     res.render("register");
 });
 
-router.get("/registered", async(req, res) => {
+router.get("/registered", async (req, res) => {
     res.render("registered");
 });
 
-router.post("/register", async(req, res) => {
+router.post("/register", async (req, res) => {
     let user = await User.findOne({ access_token: req.query.access_token });
     if (user) {
         user.skills = req.body.skills;
@@ -38,7 +38,8 @@ router.get("/create", (req, res) => {
     res.render("createProject");
 });
 
-router.post("/create", async(req, res) => {
+router.post("/create", async (req, res) => {
+    console.log(req.body.roles);
     const project = new Project({
         title: req.body.title,
         description: req.body.description,
@@ -47,7 +48,7 @@ router.post("/create", async(req, res) => {
         links: req.body.links,
         media: req.body.media,
         accessToken: req.query.accessToken,
-    })
+    });
     await project.save();
     res.json({ success: true, message: "Project created." });
 });
@@ -57,8 +58,8 @@ router.get("/project", (req, res) => {
 });
 
 router.get("/profile", (req, res) => {
-    res.render("profile")
-})
+    res.render("profile");
+});
 
 async function checkAuth(req, res, next) {
     const accessToken = req.query.accessToken;
