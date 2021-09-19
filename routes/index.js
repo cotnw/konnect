@@ -74,6 +74,10 @@ router.get("/admin", (req, res) => {
     res.render("admin");
 });
 
+router.get("/view", (req, res) => {
+    res.render("viewProject");
+});
+
 router.get("/pfp", async (req, res) => {
     let user = await User.findOne({ access_token: req.query.access_token });
     if (user) {
