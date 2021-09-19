@@ -95,7 +95,7 @@ for (let btn of document.querySelectorAll(".switch-btns .btn")) {
 }
 
 for (let desc of document.querySelectorAll(".description")) {
-    if (desc.textContent.length > 300) {
-        desc.textContent = desc.textContent.slice(0, 300) + "......";
+    if (desc.textContent.length > 200) {
+        desc.textContent = desc.textContent.slice(0, 200) + "......";
     }
 }
