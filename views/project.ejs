@@ -68,7 +68,6 @@
     }
     
     .media-image {
-        width: 28%;
         height: auto;
         margin-right: 3.5%;
         filter: drop-shadow(0px 1px 9px rgba(0, 0, 0, 0.25));
@@ -93,7 +92,7 @@
                 py-4
                 bg-purple
             ">
-        <img src="/assets/logo.svg" alt="logo" class="w-1/12" />
+        <img onclick="location.href = '/dashboard'" style="cursor: pointer;" src="/assets/logo.svg" alt="logo" class="w-1/12" />
         <div class="
                     input
                     flex
@@ -176,7 +175,7 @@
             </h1>
             <div class="roles">
                 <% for (let j = 0; j<project.roles.length; j++) { %>
-                    <form method="post" action="/project/<%= project._id %>" class="role">
+                    <form method="post" action="/project/<%= project._id %>/apply" class="role">
                         <h2 style="
                                 font-size: 1.25vw;
                                 font-weight: 500;
@@ -191,6 +190,7 @@
                             ">
                             <%= project.roles[j].desc %>
                         </p>
+                        <input type="number" name="role_id" class="hidden" value="<%= j %>" />
                         <input type="text" name="role" class="hidden" value="<%= project.roles[j].name %>">
                         <input type="text" name="desc" class="hidden" value="<%= project.roles[j].desc %>">
                         <button type="submit" class="
@@ -216,7 +216,9 @@
             </h1>
             <div class="media">
                 <% for (let k = 0; k<project.media.length; k++) { %>
+                    <a style="width: 28%;" href="<%= project.media[k] %>" target="_blank">
                     <img src="<%= project.media[k] %>" class="media-image" />
+                    </a>
                     <% } %>
             </div>
             <h1 style="
@@ -236,6 +238,21 @@
                     </a>
                     <% } %>
             </div>
+            <% if (author) { %>
+                <button onclick="location.href = '/project/<%= project._id%>/admin'" class="
+            px-10
+            py-1.5
+            flex
+            rounded-md
+            justify-center
+            items-center
+            text-lg
+            bg-purple
+            text-white
+            ">
+        Admin Portal
+        </button>
+                <%}%>
         </div>
     </div>
 </body>
