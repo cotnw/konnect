@@ -12,5 +12,5 @@ document.querySelector('nav > .prof > a > img').src = `/pfp?access_token=${authT
 
 document.querySelector('nav > .prof > img').addEventListener('click', () => {
     localStorage.removeItem('access_token')
-    window.location.reload()
+    window.location.href = '/dashboard'
 });
