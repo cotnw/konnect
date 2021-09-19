@@ -1,21 +1,22 @@
 const express = require("express");
 const User = require("../models/User");
 const Project = require("../models/Project");
+const Application = require("../models/Application");
 const router = express.Router();
 
 router.get("/", (req, res) => {
     res.redirect("/dashboard");
 });
 
-router.get("/register", async(req, res) => {
+router.get("/register", async (req, res) => {
     res.render("register");
 });
 
-router.get("/registered", async(req, res) => {
+router.get("/registered", async (req, res) => {
     res.render("registered");
 });
 
-router.post("/register", async(req, res) => {
+router.post("/register", async (req, res) => {
     let user = await User.findOne({ access_token: req.query.access_token });
     if (user) {
         user.skills = req.body.skills;
@@ -30,7 +31,7 @@ router.post("/register", async(req, res) => {
     }
 });
 
-router.get("/dashboard", async(req, res) => {
+router.get("/dashboard", async (req, res) => {
     let projects = await Project.find({});
     for (i = 0; i < projects.length; i++) {
         let user = await User.findOne({
@@ -47,7 +48,7 @@ router.get("/create", (req, res) => {
     res.render("createProject");
 });
 
-router.post("/create", async(req, res) => {
+router.post("/create", async (req, res) => {
     console.log(req.body.roles);
     const project = new Project({
         title: req.body.title,
@@ -62,13 +63,33 @@ router.post("/create", async(req, res) => {
     res.json({ success: true, message: "Project created." });
 });
 
-router.get("/project/:id", async(req, res) => {
+router.get("/project/:id", async (req, res) => {
     let project = await Project.findOne({ _id: req.params.id });
     let user = await User.findOne({ access_token: project.access_token });
     res.render("project", { project: project, user: user });
 });
 
-router.get("/projects", async(req, res) => {
+router.post("/project/:id", async (req, res) => {
+    const body = req.body;
+
+    const application = new Application({
+        accessToken: req.cookies["accessToken"],
+        projectID: req.params.id,
+        role: {
+            name: body.role,
+            desc: body.desc,
+        },
+    });
+
+    try {
+        await application.save();
+        res.redirect("/dashboard");
+    } catch (err) {
+        res.json({ err: "error" });
+    }
+});
+
+router.get("/projects", async (req, res) => {
     let projects = await Project.find({});
     for (i = 0; i < projects.length; i++) {
         let user = await User.findOne({
@@ -79,7 +100,7 @@ router.get("/projects", async(req, res) => {
     res.render("myProjects", { projects });
 });
 
-router.get("/profile", async(req, res) => {
+router.get("/profile", async (req, res) => {
     let user = await User.findOne({ access_token: req.cookies.access_token });
     res.render("profile", { user: user });
 });
@@ -92,7 +113,7 @@ router.get("/view", (req, res) => {
     res.render("viewProject");
 });
 
-router.get("/pfp", async(req, res) => {
+router.get("/pfp", async (req, res) => {
     let user = await User.findOne({ access_token: req.query.access_token });
     if (user) {
         res.redirect(user.pfp_url);

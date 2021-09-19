@@ -176,7 +176,7 @@
             </h1>
             <div class="roles">
                 <% for (let j = 0; j<project.roles.length; j++) { %>
-                    <div class="role">
+                    <form method="post" action="/project/<%= project._id %>" class="role">
                         <h2 style="
                                 font-size: 1.25vw;
                                 font-weight: 500;
@@ -191,7 +191,9 @@
                             ">
                             <%= project.roles[j].desc %>
                         </p>
-                        <button class="
+                        <input type="text" name="role" value="<%= project.roles[j].name %>">
+                        <input type="text" name="desc" value="<%= project.roles[j].desc %>">
+                        <button type="submit" class="
                                 px-10
                                 py-1.5
                                 flex
@@ -204,7 +206,7 @@
                             ">
                             Apply
                         </button>
-                    </div>
+                    </form>
                     <% } %>
             </div>
         </div>
