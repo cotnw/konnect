@@ -11,8 +11,8 @@ const dbURI = process.env.DB_URL;
 const Grid = require("gridfs-stream");
 
 // ROUTES
-const indexRouter = require('./routes/index');
-const authRouter = require('./routes/auth');
+const indexRouter = require("./routes/index");
+const authRouter = require("./routes/auth");
 
 // DB CONNECTION
 async function connectDB() {
@@ -40,5 +40,5 @@ app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
 // ROUTES
-app.use('/', indexRouter);
-app.use('/auth', authRouter);
+app.use("/", indexRouter);
+app.use("/auth", authRouter);

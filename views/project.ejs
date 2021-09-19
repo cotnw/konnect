@@ -1,153 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=DM Sans:100,200,300,400,500,600,700,800,900"
+        />
+        <link rel="icon" href="/assets/icon.png" />
+        <link rel="stylesheet" href="/css/all.css" />
+        <link rel="stylesheet" href="/css/output.css" />
+        <title>Project</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Sans:100,200,300,400,500,600,700,800,900" />
-    <link rel="icon" href="/assets/icon.png" />
-    <link rel="stylesheet" href="/css/all.css" />
-    <link rel="stylesheet" href="/css/output.css" />
-    <title>Project</title>
-</head>
+    <style>
+        .main {
+            padding-top: 5rem;
+            padding-left: 7rem;
+            padding-right: 7rem;
+        }
 
-<style>
-    
-    .main {
-        padding-top: 5rem;
-        padding-left: 7rem;
-        padding-right: 7rem;
-    }
-    
-    .inline {
-        display: flex;
-        flex-wrap: wrap;
-    }
+        .inline {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-    .left {
-        width: 50%;
-    }
+        .left {
+            width: 50%;
+        }
 
-    .author {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 1vw;
-    }
+        .author {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1vw;
+        }
 
-    .name {
-        color: #6067ed;
-        font-size: 0.8vw;
-        margin-left: 0.8vw;
-        margin-top: 0.3vw;
-    }
+        .name {
+            color: #6067ed;
+            font-size: 0.8vw;
+            margin-left: 0.8vw;
+            margin-top: 0.3vw;
+        }
 
-    .role {
-        width: 100%;
-        height: fit-content;
-        padding: 1.5vw;
-        background: #FFFFFF;
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-        border-radius: 6px;
-        margin-top: 1vw;
-        padding-top: 1vw;
-        padding-bottom: 1vw;
-        margin-bottom: 2vw;
-    }
+        .role {
+            width: 100%;
+            height: fit-content;
+            padding: 1.5vw;
+            background: #ffffff;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 6px;
+            margin-top: 1vw;
+            padding-top: 1vw;
+            padding-bottom: 1vw;
+            margin-bottom: 2vw;
+        }
 
-    .right {
-        width: 30%;
-        margin-left: 10%;
-    }
+        .right {
+            width: 30%;
+            margin-left: 10%;
+        }
 
-    .media {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: fit-content;
-        margin-top: 1vw;
-    }
+        .media {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: fit-content;
+            margin-top: 1vw;
+        }
 
-    .media-image {
-        width: 28%;
-        height: auto;
-        margin-right: 3.5%;
-        filter: drop-shadow(0px 1px 9px rgba(0, 0, 0, 0.25));
-        border-radius: 6px;
-        margin-bottom: 1vw;
-    }
+        .media-image {
+            width: 28%;
+            height: auto;
+            margin-right: 3.5%;
+            filter: drop-shadow(0px 1px 9px rgba(0, 0, 0, 0.25));
+            border-radius: 6px;
+            margin-bottom: 1vw;
+        }
 
-    .links p {
-        margin-bottom: 0.5vw;
-        width: 90%;
-        word-break: break-all;
-    }
-</style>
+        .links p {
+            margin-bottom: 0.5vw;
+            width: 90%;
+            word-break: break-all;
+        }
+    </style>
 
-<body class="bg-gray w-screen overflow-x-hidden">
-    <nav class="cont w-screen flex justify-between items-center py-4 bg-purple">
-        <img src="/assets/logo.svg" alt="logo" class="w-1/12" />
-        <div class="input flex w-1/3 bg-white rounded-md h-full p-3 pl-4 shadow-lg">
-            <img src="/assets/search.svg" alt="search icon" class="w-6 mr-4" />
-            <input type="text" placeholder="Search for Projects, Roles, People" class="w-full text-base" />
-        </div>
-        <button class="
-            px-10
-            py-2
-            flex
-            rounded-md
-            justify-center
-            items-center
-            text-lg
-            shadow-lg
-            bg-white
-            text-purple
-          ">
-          Login
-        </button>
-    </nav>
-    <div class="main pb-20 inline">
-        <div class="left">
-            <h1 style="font-size: 1.25vw; font-weight: 600; color: #6067ed">Konnect: Web App</h1>
-            <div class="author">
-                <img src="https://github.com/laxyapahuja.png" style="width: auto; height: 2vw; border-radius: 50%;">
-                <p class="name">Laxya Pahuja</p>
+    <body class="bg-gray w-screen overflow-x-hidden">
+        <nav
+            class="
+                cont
+                w-screen
+                flex
+                justify-between
+                items-center
+                py-4
+                bg-purple
+            "
+        >
+            <img src="/assets/logo.svg" alt="logo" class="w-1/12" />
+            <div
+                class="
+                    input
+                    flex
+                    w-1/3
+                    bg-white
+                    rounded-md
+                    h-full
+                    p-3
+                    pl-4
+                    shadow-lg
+                "
+            >
+                <img
+                    src="/assets/search.svg"
+                    alt="search icon"
+                    class="w-6 mr-4"
+                />
+                <input
+                    type="text"
+                    placeholder="Search for Projects, Roles, People"
+                    class="w-full text-base"
+                />
             </div>
-            <h1 style="font-size: 1.25vw; font-weight: 500; margin-top: 1.5vw;">Tags</h1>
-            <p style="font-size: 0.9vw; margin-top: 0.1vw" class="tags">UI Design, UX Design, Coding</p>
-            <h1 style="font-size: 1.25vw; font-weight: 500; margin-top: 1.5vw;">Description</h1>
-            <p style="font-size: 0.9vw; margin-top: 0.1vw" class="tags">Pellentesque et tempor nulla. Fusce velit urna, finibus ut blandit a, elementum non diam. Proin sagittis et turpis non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna nisl imperdiet arcu, ac tempor sem dolor eu leo. Integer id porttitor tortor. Suspendisse posuere, dui pretium pellentesque suscipit, erat odio interdum turpis, vel placerat sapien diam quis mauris. Sed ultrices feugiat diam ut convallis. Nulla condimentum tincidunt dui sed tempus. Vestibulum eu aliquam erat. Sed finibus fermentum gravida. In ullamcorper maximus leo, in ullamcorper velit vehicula in.</p>
-            <h1 style="font-size: 1.25vw; font-weight: 500; margin-top: 1.5vw;">Required Roles</h1>
-            <div class="roles">
-                <div class="role">
-                    <h2 style="font-size: 1.25vw; font-weight: 500; color: #6067ed">Web Developer</h2>
-                    <p style="font-size: 0.9vw; margin-top: 0.2vw; margin-bottom: 1.5vw;">Pellentesque et tempor nulla. Fusce velit urna, finibus ut blandit a, elementum non diam. Proin sagittis et turpis non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna.</p>
-                    <button class="px-10 py-1.5 flex rounded-md justify-center items-center text-lg bg-purple text-white">Apply</button>
+            <button
+                class="
+                    px-10
+                    py-2
+                    flex
+                    rounded-md
+                    justify-center
+                    items-center
+                    text-lg
+                    shadow-lg
+                    bg-white
+                    text-purple
+                "
+            >
+                Login
+            </button>
+        </nav>
+        <div class="main pb-20 inline">
+            <div class="left">
+                <h1 style="font-size: 1.25vw; font-weight: 600; color: #6067ed">
+                    Konnect: Web App
+                </h1>
+                <div class="author">
+                    <img
+                        src="https://github.com/laxyapahuja.png"
+                        style="width: auto; height: 2vw; border-radius: 50%"
+                    />
+                    <p class="name">Laxya Pahuja</p>
                 </div>
-                <div class="role">
-                    <h2 style="font-size: 1.25vw; font-weight: 500; color: #6067ed">Web Developer</h2>
-                    <p style="font-size: 0.9vw; margin-top: 0.2vw; margin-bottom: 1.5vw;">Pellentesque et tempor nulla. Fusce velit urna, finibus ut blandit a, elementum non diam. Proin sagittis et turpis non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna nisl imperdiet arcu, ac tempor sem dolor eu leo. Integer id porttitor tortor. Suspendisse posuere, dui pretium pellentesque suscipit, erat odio interdum turpis, vel placerat sapien diam quis mauris.</p>
-                    <button class="px-10 py-1.5 flex rounded-md justify-center items-center text-lg bg-purple text-white">Apply</button>
+                <h1
+                    style="
+                        font-size: 1.25vw;
+                        font-weight: 500;
+                        margin-top: 1.5vw;
+                    "
+                >
+                    Tags
+                </h1>
+                <p style="font-size: 0.9vw; margin-top: 0.1vw" class="tags">
+                    UI Design, UX Design, Coding
+                </p>
+                <h1
+                    style="
+                        font-size: 1.25vw;
+                        font-weight: 500;
+                        margin-top: 1.5vw;
+                    "
+                >
+                    Description
+                </h1>
+                <p style="font-size: 0.9vw; margin-top: 0.1vw" class="tags">
+                    Pellentesque et tempor nulla. Fusce velit urna, finibus ut
+                    blandit a, elementum non diam. Proin sagittis et turpis non
+                    ullamcorper. Fusce sagittis, est vel ullamcorper cursus,
+                    urna nisl imperdiet arcu, ac tempor sem dolor eu leo.
+                    Integer id porttitor tortor. Suspendisse posuere, dui
+                    pretium pellentesque suscipit, erat odio interdum turpis,
+                    vel placerat sapien diam quis mauris. Sed ultrices feugiat
+                    diam ut convallis. Nulla condimentum tincidunt dui sed
+                    tempus. Vestibulum eu aliquam erat. Sed finibus fermentum
+                    gravida. In ullamcorper maximus leo, in ullamcorper velit
+                    vehicula in.
+                </p>
+                <h1
+                    style="
+                        font-size: 1.25vw;
+                        font-weight: 500;
+                        margin-top: 1.5vw;
+                    "
+                >
+                    Required Roles
+                </h1>
+                <div class="roles">
+                    <div class="role">
+                        <h2
+                            style="
+                                font-size: 1.25vw;
+                                font-weight: 500;
+                                color: #6067ed;
+                            "
+                        >
+                            Web Developer
+                        </h2>
+                        <p
+                            style="
+                                font-size: 0.9vw;
+                                margin-top: 0.2vw;
+                                margin-bottom: 1.5vw;
+                            "
+                        >
+                            Pellentesque et tempor nulla. Fusce velit urna,
+                            finibus ut blandit a, elementum non diam. Proin
+                            sagittis et turpis non ullamcorper. Fusce sagittis,
+                            est vel ullamcorper cursus, urna.
+                        </p>
+                        <button
+                            class="
+                                px-10
+                                py-1.5
+                                flex
+                                rounded-md
+                                justify-center
+                                items-center
+                                text-lg
+                                bg-purple
+                                text-white
+                            "
+                        >
+                            Apply
+                        </button>
+                    </div>
+                    <div class="role">
+                        <h2
+                            style="
+                                font-size: 1.25vw;
+                                font-weight: 500;
+                                color: #6067ed;
+                            "
+                        >
+                            Web Developer
+                        </h2>
+                        <p
+                            style="
+                                font-size: 0.9vw;
+                                margin-top: 0.2vw;
+                                margin-bottom: 1.5vw;
+                            "
+                        >
+                            Pellentesque et tempor nulla. Fusce velit urna,
+                            finibus ut blandit a, elementum non diam. Proin
+                            sagittis et turpis non ullamcorper. Fusce sagittis,
+                            est vel ullamcorper cursus, urna nisl imperdiet
+                            arcu, ac tempor sem dolor eu leo. Integer id
+                            porttitor tortor. Suspendisse posuere, dui pretium
+                            pellentesque suscipit, erat odio interdum turpis,
+                            vel placerat sapien diam quis mauris.
+                        </p>
+                        <button
+                            class="
+                                px-10
+                                py-1.5
+                                flex
+                                rounded-md
+                                justify-center
+                                items-center
+                                text-lg
+                                bg-purple
+                                text-white
+                            "
+                        >
+                            Apply
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>        
-        <div class="right">
-            <h1 style="font-size: 1.25vw; font-weight: 600;">Project Media</h1>
-            <div class="media">
-                <img src="https://github.com/laxyapahuja.png" class="media-image">
-                <img src="https://github.com/laxyapahuja.png" class="media-image">
-                <img src="https://github.com/laxyapahuja.png" class="media-image">
-                <img src="https://github.com/laxyapahuja.png" class="media-image">
-                <img src="https://github.com/laxyapahuja.png" class="media-image">
-                <img src="https://github.com/laxyapahuja.png" class="media-image">
-            </div>
-            <h1 style="font-size: 1.25vw; font-weight: 600; margin-top: 1vw; margin-bottom: 0.5vw;">Links</h1>
-            <div class="links">
-                <a href="https://github.com/laxyapahuja" target="_blank" style="font-size: 0.9vw; color: #6067ed"><p>https://github.com/laxyapahuja</p></a>
-                <a href="https://www.figma.com/file/9wEcdFEuyEEIik9rctktAI/Konnect?node-id=197%3A619" target="_blank" style="font-size: 0.9vw; color: #6067ed"><p>https://www.figma.com/file/9wEcdFEuyEEIik9rctktAI/Konnect?node-id=197%3A619</p></a>
+            <div class="right">
+                <h1 style="font-size: 1.25vw; font-weight: 600">
+                    Project Media
+                </h1>
+                <div class="media">
+                    <img
+                        src="https://github.com/laxyapahuja.png"
+                        class="media-image"
+                    />
+                    <img
+                        src="https://github.com/laxyapahuja.png"
+                        class="media-image"
+                    />
+                    <img
+                        src="https://github.com/laxyapahuja.png"
+                        class="media-image"
+                    />
+                    <img
+                        src="https://github.com/laxyapahuja.png"
+                        class="media-image"
+                    />
+                    <img
+                        src="https://github.com/laxyapahuja.png"
+                        class="media-image"
+                    />
+                    <img
+                        src="https://github.com/laxyapahuja.png"
+                        class="media-image"
+                    />
+                </div>
+                <h1
+                    style="
+                        font-size: 1.25vw;
+                        font-weight: 600;
+                        margin-top: 1vw;
+                        margin-bottom: 0.5vw;
+                    "
+                >
+                    Links
+                </h1>
+                <div class="links">
+                    <a
+                        href="https://github.com/laxyapahuja"
+                        target="_blank"
+                        style="font-size: 0.9vw; color: #6067ed"
+                        ><p>https://github.com/laxyapahuja</p></a
+                    >
+                    <a
+                        href="https://www.figma.com/file/9wEcdFEuyEEIik9rctktAI/Konnect?node-id=197%3A619"
+                        target="_blank"
+                        style="font-size: 0.9vw; color: #6067ed"
+                        ><p>
+                            https://www.figma.com/file/9wEcdFEuyEEIik9rctktAI/Konnect?node-id=197%3A619
+                        </p></a
+                    >
+                </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

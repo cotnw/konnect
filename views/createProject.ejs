@@ -1,480 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Konnect - Create Project</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=DM Sans:100,200,300,400,500,600,700,800,900"
-    />
-    <link rel="icon" href="/assets/icon.png" />
-    <link rel="stylesheet" href="/css/all.css" />
-    <link rel="stylesheet" href="/css/output.css" />
-  </head>
-  <body class="bg-gray">
-    <main class="regis flex w-screen h-screen overflow-hidden">
-      <!-- BLOCKS -->
-      <form class="w-4/5" enctype="multipart/form-data">
-        <div
-          class="
-            block-sec
-            page-1
-            absolute
-            top-0
-            left-0
-            cont
-            w-3/4
-            h-full
-            py-20
-            overflow-y-scroll
-          "
-        >
-          <h1 class="text-purple text-4xl font-medium mb-8">Project Title</h1>
-          <p class="text-lg pr-96 mb-8">Give your project a suitable title</p>
-          <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mb-10">
-            <input
-              type="text"
-              placeholder="Project Title"
-              class="w-full text-base pl-2"
-              name="title"
-            />
-          </div>
-        </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Konnect - Create Project</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=DM Sans:100,200,300,400,500,600,700,800,900"
+        />
+        <link rel="icon" href="/assets/icon.png" />
+        <link rel="stylesheet" href="/css/all.css" />
+        <link rel="stylesheet" href="/css/output.css" />
+    </head>
+    <body class="bg-gray">
+        <main class="regis flex w-screen h-screen overflow-hidden">
+            <!-- BLOCKS -->
+            <form class="w-4/5" enctype="multipart/form-data">
+                <div
+                    class="
+                        block-sec
+                        page-1
+                        absolute
+                        top-0
+                        left-0
+                        cont
+                        w-3/4
+                        h-full
+                        py-20
+                        overflow-y-scroll
+                    "
+                >
+                    <h1 class="text-purple text-4xl font-medium mb-8">
+                        Project Title
+                    </h1>
+                    <p class="text-lg pr-96 mb-8">
+                        Give your project a suitable title
+                    </p>
+                    <div
+                        class="
+                            input
+                            flex
+                            w-2/3
+                            bg-white
+                            rounded-md
+                            p-3
+                            pl-4
+                            mb-10
+                        "
+                    >
+                        <input
+                            type="text"
+                            placeholder="Project Title"
+                            class="w-full text-base pl-2"
+                            name="title"
+                        />
+                    </div>
+                </div>
 
-        <div
-          class="
-            block-sec
-            page-2
-            absolute
-            top-0
-            left-0
-            cont
-            w-3/4
-            h-full
-            py-20
-            overflow-y-scroll
-            hide
-          "
-        >
-          <h1 class="text-purple text-4xl font-medium mb-8">
-            Descride your project idea
-          </h1>
-          <p class="text-lg pr-96 mb-8">
-            Help people understand what your project is all about.
-          </p>
-          <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mr-3">
-            <textarea
-              type="text"
-              placeholder="Example: My cool project does this and that..."
-              class="w-full text-base pl-2 h-80 max-h-80"
-              style="min-height: 10vh"
-              name="desc"
-            ></textarea>
-          </div>
-        </div>
+                <div
+                    class="
+                        block-sec
+                        page-2
+                        absolute
+                        top-0
+                        left-0
+                        cont
+                        w-3/4
+                        h-full
+                        py-20
+                        overflow-y-scroll
+                        hide
+                    "
+                >
+                    <h1 class="text-purple text-4xl font-medium mb-8">
+                        Descride your project idea
+                    </h1>
+                    <p class="text-lg pr-96 mb-8">
+                        Help people understand what your project is all about.
+                    </p>
+                    <div
+                        class="
+                            input
+                            flex
+                            w-2/3
+                            bg-white
+                            rounded-md
+                            p-3
+                            pl-4
+                            mr-3
+                        "
+                    >
+                        <textarea
+                            type="text"
+                            placeholder="Example: My cool project does this and that..."
+                            class="w-full text-base pl-2 h-80 max-h-80"
+                            style="min-height: 10vh"
+                            name="desc"
+                        ></textarea>
+                    </div>
+                </div>
 
-        <div
-          class="
-            block-sec
-            page-3
-            absolute
-            top-0
-            left-0
-            cont
-            w-3/4
-            h-full
-            py-20
-            overflow-y-scroll
-            z-10
-            hide
-          "
-        >
-          <h1 class="text-purple text-4xl font-medium mb-8">
-            Select your skills
-          </h1>
-          <p class="text-lg pr-96 mb-8">
-            This will help us find relevant projects for you and connect you
-            with users with skillsets relevant to you. (Select upto 5)
-          </p>
-          <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mb-10">
-            <img src="/assets/search.svg" alt="search icon" class="w-6 mr-4" />
-            <input
-              type="text"
-              placeholder="Search for tech skills..."
-              class="w-full text-base"
-            />
-          </div>
+                <div
+                    class="
+                        block-sec
+                        page-3
+                        absolute
+                        top-0
+                        left-0
+                        cont
+                        w-3/4
+                        h-full
+                        py-20
+                        overflow-y-scroll
+                        z-10
+                        hide
+                    "
+                >
+                    <h1 class="text-purple text-4xl font-medium mb-8">
+                        Select your skills
+                    </h1>
+                    <p class="text-lg pr-96 mb-8">
+                        This will help us find relevant projects for you and
+                        connect you with users with skillsets relevant to you.
+                        (Select upto 5)
+                    </p>
+                    <div
+                        class="
+                            input
+                            flex
+                            w-2/3
+                            bg-white
+                            rounded-md
+                            p-3
+                            pl-4
+                            mb-10
+                        "
+                    >
+                        <img
+                            src="/assets/search.svg"
+                            alt="search icon"
+                            class="w-6 mr-4"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Search for tech skills..."
+                            class="w-full text-base"
+                        />
+                    </div>
 
-          <div class="skills w-full flex justify-between flex-wrap">
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
+                    <div class="skills w-full flex justify-between flex-wrap">
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
 
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
 
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
 
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
 
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
 
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
 
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
 
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
 
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-          </div>
-        </div>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                        <button class="skill mb-8 py-4 rounded-md">
+                            Web Devlopment
+                        </button>
+                    </div>
+                </div>
 
-        <div
-          class="
-            block-sec
-            page-4
-            absolute
-            top-0
-            left-0
-            cont
-            w-3/4
-            h-full
-            py-20
-            overflow-y-scroll
-            hide
-          "
-        >
-          <h1 class="text-purple text-4xl font-medium mb-8">
-            List required roles
-          </h1>
-          <p class="text-lg pr-96 mb-8">
-            List requirements for the kind of collaborators you’re looking for.
-          </p>
-          <button
-            class="
-              add-role
-              bg-purple
-              rounded-md
-              px-14
-              py-3
-              text-white
-              flex
-              items-center
-              mb-20
-            "
-          >
-            <img
-              src="/assets/plus-white.svg"
-              class="w-6"
-              alt=""
-            />&nbsp;&nbsp;Add Role
-          </button>
+                <div
+                    class="
+                        block-sec
+                        page-4
+                        absolute
+                        top-0
+                        left-0
+                        cont
+                        w-3/4
+                        h-full
+                        py-20
+                        overflow-y-scroll
+                        hide
+                    "
+                >
+                    <h1 class="text-purple text-4xl font-medium mb-8">
+                        List required roles
+                    </h1>
+                    <p class="text-lg pr-96 mb-8">
+                        List requirements for the kind of collaborators you’re
+                        looking for.
+                    </p>
+                    <button
+                        class="
+                            add-role
+                            bg-purple
+                            rounded-md
+                            px-14
+                            py-3
+                            text-white
+                            flex
+                            items-center
+                            mb-20
+                        "
+                    >
+                        <img
+                            src="/assets/plus-white.svg"
+                            class="w-6"
+                            alt=""
+                        />&nbsp;&nbsp;Add Role
+                    </button>
 
-          <div class="roles w-full">
-            <div class="role w-full mb-14">
-              <label class="block mb-2 text-lg">Role</label>
-              <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mb-4">
-                <input
-                  type="text"
-                  placeholder="Role"
-                  class="w-full text-base pl-2"
-                  name="role-name"
-                />
-              </div>
+                    <div class="roles w-full">
+                        <div class="role w-full mb-14">
+                            <label class="block mb-2 text-lg">Role</label>
+                            <div
+                                class="
+                                    input
+                                    flex
+                                    w-2/3
+                                    bg-white
+                                    rounded-md
+                                    p-3
+                                    pl-4
+                                    mb-4
+                                "
+                            >
+                                <input
+                                    type="text"
+                                    placeholder="Role"
+                                    class="w-full text-base pl-2"
+                                    name="role-name"
+                                />
+                            </div>
 
-              <label class="block mb-2 text-lg">Description</label>
-              <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mr-3">
-                <textarea
-                  type="text"
-                  placeholder="Person who manages coders"
-                  class="w-full text-base pl-2 h-80"
-                  style="min-height: 10vh"
-                  name="role-desc"
-                ></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
+                            <label class="block mb-2 text-lg"
+                                >Description</label
+                            >
+                            <div
+                                class="
+                                    input
+                                    flex
+                                    w-2/3
+                                    bg-white
+                                    rounded-md
+                                    p-3
+                                    pl-4
+                                    mr-3
+                                "
+                            >
+                                <textarea
+                                    type="text"
+                                    placeholder="Person who manages coders"
+                                    class="w-full text-base pl-2 h-80"
+                                    style="min-height: 10vh"
+                                    name="role-desc"
+                                ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div
-          class="
-            block-sec
-            page-5
-            absolute
-            top-0
-            left-0
-            cont
-            w-3/4
-            h-full
-            py-20
-            overflow-y-scroll
-            hide
-          "
-        >
-          <h1 class="text-purple text-4xl font-medium mb-8">Add links</h1>
-          <p class="text-lg pr-96 mb-8">Add links for your project</p>
-          <div class="input-hold flex items-center mb-6">
-            <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mr-3">
-              <input
-                type="text"
-                placeholder="Example: Behance, Youtube, Github"
-                class="w-full text-base pl-2"
-              />
-            </div>
-            <button class="cursor-pointer add-link">
-              <img src="/assets/plus.svg" class="w-7" alt="" />
-            </button>
-          </div>
-        </div>
+                <div
+                    class="
+                        block-sec
+                        page-5
+                        absolute
+                        top-0
+                        left-0
+                        cont
+                        w-3/4
+                        h-full
+                        py-20
+                        overflow-y-scroll
+                        hide
+                    "
+                >
+                    <h1 class="text-purple text-4xl font-medium mb-8">
+                        Add links
+                    </h1>
+                    <p class="text-lg pr-96 mb-8">Add links for your project</p>
+                    <div class="input-hold flex items-center mb-6">
+                        <div
+                            class="
+                                input
+                                flex
+                                w-2/3
+                                bg-white
+                                rounded-md
+                                p-3
+                                pl-4
+                                mr-3
+                            "
+                        >
+                            <input
+                                type="text"
+                                placeholder="Example: Behance, Youtube, Github"
+                                class="w-full text-base pl-2"
+                            />
+                        </div>
+                        <button class="cursor-pointer add-link">
+                            <img src="/assets/plus.svg" class="w-7" alt="" />
+                        </button>
+                    </div>
+                </div>
 
-        <div
-          class="
-            block-sec
-            page-6
-            absolute
-            top-0
-            left-0
-            cont
-            w-3/4
-            h-full
-            py-20
-            overflow-y-scroll
-            hide
-          "
-        >
-          <h1 class="text-purple text-4xl font-medium mb-8">Add Media</h1>
-          <p class="text-lg pr-96 mb-8">
-            Add upto 4 relevant media to showcase your project/idea to people.
-            (png, jpg, pdf, mp4)
-          </p>
-          <div class="up-hold">
-            <label
-              for="1"
-              class="
-                add-media
-                bg-purple
-                rounded-md
-                px-14
-                py-3
-                text-white
-                flex
-                w-1/5
-                justify-center
-                items-center
-                cursor-pointer
-                mb-20
-              "
+                <div
+                    class="
+                        block-sec
+                        page-6
+                        absolute
+                        top-0
+                        left-0
+                        cont
+                        w-3/4
+                        h-full
+                        py-20
+                        overflow-y-scroll
+                        hide
+                    "
+                >
+                    <h1 class="text-purple text-4xl font-medium mb-8">
+                        Add Media
+                    </h1>
+                    <p class="text-lg pr-96 mb-8">
+                        Add upto 4 relevant media to showcase your project/idea
+                        to people. (png, jpg, pdf, mp4)
+                    </p>
+                    <div class="up-hold">
+                        <label
+                            for="1"
+                            class="
+                                add-media
+                                bg-purple
+                                rounded-md
+                                px-14
+                                py-3
+                                text-white
+                                flex
+                                w-1/5
+                                justify-center
+                                items-center
+                                cursor-pointer
+                                mb-20
+                            "
+                        >
+                            <img
+                                src="/assets/plus-white.svg"
+                                class="w-6"
+                                alt=""
+                            />&nbsp;&nbsp;Upload
+                        </label>
+                        <input type="file" class="hidden" id="1" />
+                    </div>
+
+                    <div class="up-hold hidden">
+                        <label
+                            for="2"
+                            class="
+                                add-media
+                                bg-purple
+                                rounded-md
+                                px-14
+                                py-3
+                                text-white
+                                flex
+                                w-1/5
+                                justify-center
+                                items-center
+                                cursor-pointer
+                                mb-20
+                            "
+                        >
+                            <img
+                                src="/assets/plus-white.svg"
+                                class="w-6"
+                                alt=""
+                            />&nbsp;&nbsp;Upload
+                        </label>
+                        <input type="file" class="hidden" id="2" />
+                    </div>
+
+                    <div class="up-hold hidden">
+                        <label
+                            for="3"
+                            class="
+                                add-media
+                                bg-purple
+                                rounded-md
+                                px-14
+                                py-3
+                                text-white
+                                flex
+                                w-1/5
+                                justify-center
+                                items-center
+                                cursor-pointer
+                                mb-20
+                            "
+                        >
+                            <img
+                                src="/assets/plus-white.svg"
+                                class="w-6"
+                                alt=""
+                            />&nbsp;&nbsp;Upload
+                        </label>
+                        <input type="file" class="hidden" id="3" />
+                    </div>
+
+                    <div class="up-hold hidden">
+                        <label
+                            for="4"
+                            class="
+                                add-media
+                                bg-purple
+                                rounded-md
+                                px-14
+                                py-3
+                                text-white
+                                flex
+                                w-1/5
+                                justify-center
+                                items-center
+                                cursor-pointer
+                                mb-20
+                            "
+                        >
+                            <img
+                                src="/assets/plus-white.svg"
+                                class="w-6"
+                                alt=""
+                            />&nbsp;&nbsp;Upload
+                        </label>
+                        <input type="file" class="hidden" id="4" />
+                    </div>
+
+                    <div
+                        class="
+                            imgs
+                            flex
+                            mt-10
+                            w-full
+                            pr-44
+                            justify-between
+                            pb-20
+                        "
+                    >
+                        <img
+                            src="#"
+                            id="img-show-1"
+                            class="rounded-md"
+                            alt=""
+                        />
+                        <img
+                            src="#"
+                            id="img-show-2"
+                            class="rounded-md"
+                            alt=""
+                        />
+                        <img
+                            src="#"
+                            class="rounded-md"
+                            id="img-show-3"
+                            alt=""
+                        />
+                        <img
+                            src="#"
+                            class="rounded-md"
+                            id="img-show-4"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </form>
+            <!-- BLOCKS END -->
+
+            <aside
+                class="
+                    flex flex-col
+                    w-1/4
+                    h-full
+                    absolute
+                    top-0
+                    right-0
+                    bg-purple
+                    px-12
+                    py-16
+                "
             >
-              <img
-                src="/assets/plus-white.svg"
-                class="w-6"
-                alt=""
-              />&nbsp;&nbsp;Upload
-            </label>
-            <input type="file" class="hidden" id="1" />
-          </div>
+                <img src="/assets/logo.svg" alt="logo" class="w-1/2 mb-20" />
+                <p class="text-white text-2xl mb-20">
+                    Easily find collaborators for projects
+                </p>
+                <p id="ap" class="text-white text-lg leading-loose">
+                    Connect with like minded creators.<br />Turn your ideas into
+                    reality.
+                </p>
+                <img src="/assets/comp.svg" class="w-full" alt="" />
+            </aside>
 
-          <div class="up-hold hidden">
-            <label
-              for="2"
-              class="
-                add-media
-                bg-purple
-                rounded-md
-                px-14
-                py-3
-                text-white
-                flex
-                w-1/5
-                justify-center
-                items-center
-                cursor-pointer
-                mb-20
-              "
+            <nav
+                class="
+                    bottom
+                    absolute
+                    bottom-0
+                    left-0
+                    w-screen
+                    bg-white
+                    py-4
+                    px-10
+                    flex flex-row-reverse
+                    justify-between
+                    z-20
+                "
             >
-              <img
-                src="/assets/plus-white.svg"
-                class="w-6"
-                alt=""
-              />&nbsp;&nbsp;Upload
-            </label>
-            <input type="file" class="hidden" id="2" />
-          </div>
+                <button
+                    class="
+                        px-20
+                        py-2
+                        flex
+                        rounded-md
+                        justify-center
+                        items-center
+                        text-base
+                        bg-purple
+                        font-light
+                        text-white
+                        disabled
+                    "
+                    id="proceed"
+                >
+                    Proceed
+                </button>
+                <button
+                    class="
+                        px-20
+                        py-2
+                        flex
+                        rounded-md
+                        justify-center
+                        items-center
+                        text-base
+                        bg-white
+                        font-light
+                        text-purple
+                        mx-3
+                        tr
+                    "
+                    id="back"
+                >
+                    Go back
+                </button>
+            </nav>
 
-          <div class="up-hold hidden">
-            <label
-              for="3"
-              class="
-                add-media
-                bg-purple
-                rounded-md
-                px-14
-                py-3
-                text-white
-                flex
-                w-1/5
-                justify-center
-                items-center
-                cursor-pointer
-                mb-20
-              "
-            >
-              <img
-                src="/assets/plus-white.svg"
-                class="w-6"
-                alt=""
-              />&nbsp;&nbsp;Upload
-            </label>
-            <input type="file" class="hidden" id="3" />
-          </div>
-
-          <div class="up-hold hidden">
-            <label
-              for="4"
-              class="
-                add-media
-                bg-purple
-                rounded-md
-                px-14
-                py-3
-                text-white
-                flex
-                w-1/5
-                justify-center
-                items-center
-                cursor-pointer
-                mb-20
-              "
-            >
-              <img
-                src="/assets/plus-white.svg"
-                class="w-6"
-                alt=""
-              />&nbsp;&nbsp;Upload
-            </label>
-            <input type="file" class="hidden" id="4" />
-          </div>
-
-          <div class="imgs flex mt-10 w-full pr-44 justify-between pb-20">
-            <img src="#" id="img-show-1" class="rounded-md" alt="" />
-            <img src="#" id="img-show-2" class="rounded-md" alt="" />
-            <img src="#" class="rounded-md" id="img-show-3" alt="" />
-            <img src="#" class="rounded-md" id="img-show-4" alt="" />
-          </div>
-        </div>
-      </form>
-      <!-- BLOCKS END -->
-
-      <aside
-        class="
-          flex flex-col
-          w-1/4
-          h-full
-          absolute
-          top-0
-          right-0
-          bg-purple
-          px-12
-          py-16
-        "
-      >
-        <img src="/assets/logo.svg" alt="logo" class="w-1/2 mb-20" />
-        <p class="text-white text-2xl mb-20">
-          Easily find collaborators for projects
-        </p>
-        <p id="ap" class="text-white text-lg leading-loose">
-          Connect with like minded creators.<br />Turn your ideas into reality.
-        </p>
-        <img src="/assets/comp.svg" class="w-full" alt="" />
-      </aside>
-
-      <nav
-        class="
-          bottom
-          absolute
-          bottom-0
-          left-0
-          w-screen
-          bg-white
-          py-4
-          px-10
-          flex flex-row-reverse
-          justify-between
-          z-20
-        "
-      >
-        <button
-          class="
-            px-20
-            py-2
-            flex
-            rounded-md
-            justify-center
-            items-center
-            text-base
-            bg-purple
-            font-light
-            text-white
-            disabled
-          "
-          id="proceed"
-        >
-          Proceed
-        </button>
-        <button
-          class="
-            px-20
-            py-2
-            flex
-            rounded-md
-            justify-center
-            items-center
-            text-base
-            bg-white
-            font-light
-            text-purple
-            mx-3
-            tr
-          "
-          id="back"
-        >
-          Go back
-        </button>
-      </nav>
-
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      ></script>
-      <script src="/js/create.js"></script>
-    </main>
-  </body>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+                integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+            ></script>
+            <script src="/js/create.js"></script>
+        </main>
+    </body>
 </html>

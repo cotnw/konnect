@@ -1,279 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Konnect - Register</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=DM Sans:100,200,300,400,500,600,700,800,900"
+        />
+        <link rel="icon" href="/assets/icon.png" />
+        <link rel="stylesheet" href="/css/all.css" />
+        <link rel="stylesheet" href="/css/output.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Konnect - Register</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Sans:100,200,300,400,500,600,700,800,900" />
-    <link rel="icon" href="/assets/icon.png" />
-    <link rel="stylesheet" href="/css/all.css" />
-    <link rel="stylesheet" href="/css/output.css" />
-</head>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let token = urlParams.get("access_token");
+        if (token) {
+            localStorage.setItem("access_token", token);
+        }
+    </script>
 
-<script>
-    const urlParams = new URLSearchParams(window.location.search);
-    let token = urlParams.get("access_token");
-    if (token) {
-        localStorage.setItem("access_token", token);
-    }
-</script>
-
-<body class="bg-gray">
-    <main class="regis flex w-screen h-screen overflow-hidden">
-        <!-- BLOCKS -->
-        <div class="
-          block-sec
-          page-1
-          absolute
-          top-0
-          left-0
-          cont
-          w-3/4
-          h-full
-          py-20
-          overflow-y-scroll
-          z-10
-        ">
-            <h1 class="text-purple text-4xl font-medium mb-8">
-                Select your skills
-            </h1>
-            <p class="text-lg pr-96 mb-8">
-                This will help us find relevant projects for you and connect you with users with skillsets relevant to you. (Select upto 5)
-            </p>
-            <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mb-10">
-                <img src="/assets/search.svg" alt="search icon" class="w-6 mr-4" />
-                <input type="text" placeholder="Search for tech skills..." class="w-full text-base" />
-            </div>
-
-            <div class="skills w-full flex justify-between flex-wrap">
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-                <button class="skill mb-8 py-4 rounded-md">Web Devlopment</button>
-            </div>
-        </div>
-
-        <div class="
-          block-sec
-          page-2
-          absolute
-          top-0
-          left-0
-          cont
-          w-3/4
-          h-full
-          py-20
-          overflow-y-scroll
-          hide
-        ">
-            <h1 class="text-purple text-4xl font-medium mb-8">
-                Give yourself a title
-            </h1>
-            <p class="text-lg pr-96 mb-8">
-                This will help us find relevant projects for you and connect you with users with skillsets relevant to you. (Select upto 5)
-            </p>
-            <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mb-10">
-                <input type="text" placeholder="UI Designer" class="w-full text-base pl-2" name="title" />
-            </div>
-        </div>
-
-        <div class="
-          block-sec
-          page-3
-          absolute
-          top-0
-          left-0
-          cont
-          w-3/4
-          h-full
-          py-20
-          overflow-y-scroll
-          hide
-        ">
-            <h1 class="text-purple text-4xl font-medium mb-8">
-                Showcase your portfolio
-            </h1>
-            <p class="text-lg pr-96 mb-8">
-                Add links to online platforms to showcase work you’ve done to others.
-            </p>
-            <div class="input-hold flex items-center mb-6">
-                <div class="input bg-white flex w-2/3 rounded-md p-3 pl-4 mr-3">
-                    <input type="text" placeholder="Example: Behance, Youtube, Github" class="w-full text-base pl-2" />
+    <body class="bg-gray">
+        <main class="regis flex w-screen h-screen overflow-hidden">
+            <!-- BLOCKS -->
+            <div
+                class="
+                    block-sec
+                    page-1
+                    absolute
+                    top-0
+                    left-0
+                    cont
+                    w-3/4
+                    h-full
+                    py-20
+                    overflow-y-scroll
+                    z-10
+                "
+            >
+                <h1 class="text-purple text-4xl font-medium mb-8">
+                    Select your skills
+                </h1>
+                <p class="text-lg pr-96 mb-8">
+                    This will help us find relevant projects for you and connect
+                    you with users with skillsets relevant to you. (Select upto
+                    5)
+                </p>
+                <div
+                    class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mb-10"
+                >
+                    <img
+                        src="/assets/search.svg"
+                        alt="search icon"
+                        class="w-6 mr-4"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Search for tech skills..."
+                        class="w-full text-base"
+                    />
                 </div>
-                <button class="cursor-pointer add-link">
-            <img src="/assets/plus.svg" class="w-7" alt="" />
-          </button>
+
+                <div class="skills w-full flex justify-between flex-wrap">
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                    <button class="skill mb-8 py-4 rounded-md">
+                        Web Devlopment
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="
-          block-sec
-          page-4
-          absolute
-          top-0
-          left-0
-          cont
-          w-3/4
-          h-full
-          py-20
-          overflow-y-scroll
-          hide
-        ">
-            <h1 class="text-purple text-4xl font-medium mb-8">
-                Tell us a bit about yourself
-            </h1>
-            <p class="text-lg pr-96 mb-8">
-                Write a few lines to tell people about your interests and experience.
-            </p>
-            <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mr-3">
-                <textarea type="text" placeholder="Example: Behance, Youtube, Github" class="w-full text-base pl-2 h-80 max-h-80" style="min-height: 10vh" name="desc"></textarea>
+            <div
+                class="
+                    block-sec
+                    page-2
+                    absolute
+                    top-0
+                    left-0
+                    cont
+                    w-3/4
+                    h-full
+                    py-20
+                    overflow-y-scroll
+                    hide
+                "
+            >
+                <h1 class="text-purple text-4xl font-medium mb-8">
+                    Give yourself a title
+                </h1>
+                <p class="text-lg pr-96 mb-8">
+                    This will help us find relevant projects for you and connect
+                    you with users with skillsets relevant to you. (Select upto
+                    5)
+                </p>
+                <div
+                    class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mb-10"
+                >
+                    <input
+                        type="text"
+                        placeholder="UI Designer"
+                        class="w-full text-base pl-2"
+                        name="title"
+                    />
+                </div>
             </div>
-        </div>
 
-        <div class="
-          block-sec
-          page-5
-          absolute
-          top-0
-          left-0
-          cont
-          w-3/4
-          h-full
-          py-20
-          overflow-y-scroll
-          hide
-        ">
-            <h1 class="text-purple text-4xl font-medium mb-8">
-                Contact information
-            </h1>
-            <p class="text-lg pr-96 mb-8">
-                Enter your E-mail address to be displayed on your profile.
-            </p>
-            <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mb-10">
-                <input type="email" placeholder="example@example.com" class="w-full text-base pl-2" name="mail" />
+            <div
+                class="
+                    block-sec
+                    page-3
+                    absolute
+                    top-0
+                    left-0
+                    cont
+                    w-3/4
+                    h-full
+                    py-20
+                    overflow-y-scroll
+                    hide
+                "
+            >
+                <h1 class="text-purple text-4xl font-medium mb-8">
+                    Showcase your portfolio
+                </h1>
+                <p class="text-lg pr-96 mb-8">
+                    Add links to online platforms to showcase work you’ve done
+                    to others.
+                </p>
+                <div class="input-hold flex items-center mb-6">
+                    <div
+                        class="
+                            input
+                            bg-white
+                            flex
+                            w-2/3
+                            rounded-md
+                            p-3
+                            pl-4
+                            mr-3
+                        "
+                    >
+                        <input
+                            type="text"
+                            placeholder="Example: Behance, Youtube, Github"
+                            class="w-full text-base pl-2"
+                        />
+                    </div>
+                    <button class="cursor-pointer add-link">
+                        <img src="/assets/plus.svg" class="w-7" alt="" />
+                    </button>
+                </div>
             </div>
-        </div>
-        <!-- BLOCKS END -->
 
-        <a href="/registered" style="display: none" id="success">registered</a>
-        <a href="/err" style="display: none" id="err">err</a>
+            <div
+                class="
+                    block-sec
+                    page-4
+                    absolute
+                    top-0
+                    left-0
+                    cont
+                    w-3/4
+                    h-full
+                    py-20
+                    overflow-y-scroll
+                    hide
+                "
+            >
+                <h1 class="text-purple text-4xl font-medium mb-8">
+                    Tell us a bit about yourself
+                </h1>
+                <p class="text-lg pr-96 mb-8">
+                    Write a few lines to tell people about your interests and
+                    experience.
+                </p>
+                <div class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mr-3">
+                    <textarea
+                        type="text"
+                        placeholder="Example: Behance, Youtube, Github"
+                        class="w-full text-base pl-2 h-80 max-h-80"
+                        style="min-height: 10vh"
+                        name="desc"
+                    ></textarea>
+                </div>
+            </div>
 
-        <!-- LOADING -->
+            <div
+                class="
+                    block-sec
+                    page-5
+                    absolute
+                    top-0
+                    left-0
+                    cont
+                    w-3/4
+                    h-full
+                    py-20
+                    overflow-y-scroll
+                    hide
+                "
+            >
+                <h1 class="text-purple text-4xl font-medium mb-8">
+                    Contact information
+                </h1>
+                <p class="text-lg pr-96 mb-8">
+                    Enter your E-mail address to be displayed on your profile.
+                </p>
+                <div
+                    class="input flex w-2/3 bg-white rounded-md p-3 pl-4 mb-10"
+                >
+                    <input
+                        type="email"
+                        placeholder="example@example.com"
+                        class="w-full text-base pl-2"
+                        name="mail"
+                    />
+                </div>
+            </div>
+            <!-- BLOCKS END -->
 
-        <!-- LOADING END -->
+            <a href="/registered" style="display: none" id="success"
+                >registered</a
+            >
+            <a href="/err" style="display: none" id="err">err</a>
 
-        <aside class="
-          flex flex-col
-          w-1/4
-          h-full
-          absolute
-          top-0
-          right-0
-          bg-purple
-          px-12
-          py-16
-        ">
-            <img src="/assets/logo.svg" alt="logo" class="w-1/2 mb-20" />
-            <p class="text-white text-2xl mb-20">
-                Easily find collaborators for projects
-            </p>
-            <p id="ap" class="text-white text-lg leading-loose">
-                Connect with like minded creators.<br />Turn your ideas into reality.
-            </p>
-            <img src="/assets/hand.svg" class="w-full" alt="" />
-        </aside>
+            <!-- LOADING -->
 
-        <nav class="
-          bottom
-          absolute
-          bottom-0
-          left-0
-          w-screen
-          bg-white
-          py-4
-          px-10
-          flex flex-row-reverse
-          justify-between
-          z-20
-        ">
-            <button class="
-            px-20
-            py-2
-            flex
-            rounded-md
-            justify-center
-            items-center
-            text-base
-            bg-purple
-            font-light
-            text-white
-            disabled
-          " id="proceed">
-          Proceed
-        </button>
-            <button class="
-            px-20
-            py-2
-            flex
-            rounded-md
-            justify-center
-            items-center
-            text-base
-            bg-white
-            font-light
-            text-purple
-            mx-3
-            tr
-          " id="back">
-          Go back
-        </button>
-        </nav>
+            <!-- LOADING END -->
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="/js/register.js"></script>
-    </main>
-</body>
+            <aside
+                class="
+                    flex flex-col
+                    w-1/4
+                    h-full
+                    absolute
+                    top-0
+                    right-0
+                    bg-purple
+                    px-12
+                    py-16
+                "
+            >
+                <img src="/assets/logo.svg" alt="logo" class="w-1/2 mb-20" />
+                <p class="text-white text-2xl mb-20">
+                    Easily find collaborators for projects
+                </p>
+                <p id="ap" class="text-white text-lg leading-loose">
+                    Connect with like minded creators.<br />Turn your ideas into
+                    reality.
+                </p>
+                <img src="/assets/hand.svg" class="w-full" alt="" />
+            </aside>
 
+            <nav
+                class="
+                    bottom
+                    absolute
+                    bottom-0
+                    left-0
+                    w-screen
+                    bg-white
+                    py-4
+                    px-10
+                    flex flex-row-reverse
+                    justify-between
+                    z-20
+                "
+            >
+                <button
+                    class="
+                        px-20
+                        py-2
+                        flex
+                        rounded-md
+                        justify-center
+                        items-center
+                        text-base
+                        bg-purple
+                        font-light
+                        text-white
+                        disabled
+                    "
+                    id="proceed"
+                >
+                    Proceed
+                </button>
+                <button
+                    class="
+                        px-20
+                        py-2
+                        flex
+                        rounded-md
+                        justify-center
+                        items-center
+                        text-base
+                        bg-white
+                        font-light
+                        text-purple
+                        mx-3
+                        tr
+                    "
+                    id="back"
+                >
+                    Go back
+                </button>
+            </nav>
+
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+                integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+            ></script>
+            <script src="/js/register.js"></script>
+        </main>
+    </body>
 </html>
