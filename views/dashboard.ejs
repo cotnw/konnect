@@ -32,8 +32,8 @@
         .projects {
             margin-top: 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, 35%);
-            grid-gap: 40px;
+            grid-template-columns: repeat(auto-fit, 40%);
+            grid-gap: 45px;
         }
 
         .project {
@@ -55,13 +55,13 @@
         }
 
         .project .title {
-            font-size: 24px;
+            font-size: 1.4vw;
             font-weight: 500;
             color: rgba(96, 103, 237, 1);
         }
 
         .project .tags {
-            font-size: 18px;
+            font-size: 1vw;
             color: #717171;
         }
 
@@ -69,12 +69,12 @@
             margin-top: 2vh;
             margin-bottom: 2vh;
             color: #717171;
-            font-size: 18px;
+            font-size: 1vw;
         }
 
         .project a {
             color: rgba(96, 103, 237, 1);
-            font-size: 18px;
+            font-size: 1vw;
         }
 
         .project b {
@@ -82,16 +82,23 @@
         }
 
         .project .description {
-            font-size: 18px;
+            font-size: 1vw;
             line-height: 23px;
             color: #717171;
         }
 
         .project .author {
             float: right;
-            font-size: 18px;
+            font-size: 1vw;
             line-height: 23px;
             color: #717171;
+        }
+        .switch-btn-active {
+            color: #fff;
+            background-color: #6067ed;
+        }
+        .switch-btns .btn {
+            transition: all 0.2s;
         }
     </style>
 
@@ -173,9 +180,47 @@
         </nav>
 
         <div class="main pb-20">
-            <h1 style="font-size: 24px; font-weight: 600">
-                Project matches for you
-            </h1>
+            <div class="w-full flex items-center">
+                <h1 style="font-size: 24px; font-weight: 600" class="mr-20">
+                    Project matches for you
+                </h1>
+                <div class="flex switch-btns hidden">
+                    <button
+                        class="
+                            btn
+                            flex
+                            justify-center
+                            items-center
+                            bg-transparent
+                            text-purple
+                            switch-btn-active
+                            px-8
+                            rounded-3xl
+                            py-2
+                            mr-4
+                            border-none
+                        "
+                    >
+                        Projects
+                    </button>
+                    <button
+                        class="
+                            btn
+                            flex
+                            justify-center
+                            items-center
+                            bg-transparent
+                            text-purple
+                            px-8
+                            rounded-3xl
+                            py-2
+                            border-none
+                        "
+                    >
+                        People
+                    </button>
+                </div>
+            </div>
             <div class="projects">
                 <div class="project">
                     <h2 class="author">posted by <a>Ishaan Das</a></h2>
@@ -260,80 +305,98 @@
             </div>
         </div>
 
-        <!-- <div class="pb-20 cont">
-      <div class="projects search-projects hidden">
-        <div class="project">
-          <h2 class="author">posted by <a>Ishaan Das</a></h2>
-          <h1 class="title">unique</h1>
-          <h2 class="tags">UI/UX, Coding</h2>
-          <h2 class="roles">
-            <b>Listed roles:</b> <a>Web Development</a>, <a>UI Designer</a>
-          </h2>
-          <h2 class="description">
-            <b>Description:</b> Pellentesque et tempor nulla. Fusce velit urna,
-            finibus ut blandit a, elementum non diam. Proin sagittis et turpis
-            non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna
-            nisl imperdiet arcu, ac tempor sem dolor eu leo......
-          </h2>
+        <div class="cont">
+            <div
+                class="
+                    users
+                    flex flex-wrap
+                    pb-20
+                    w-11/12
+                    justify-start
+                    items-center
+                    hidden
+                "
+            >
+                <a
+                    href="/"
+                    class="
+                        user
+                        flex flex-col
+                        items-center
+                        w-1/6
+                        mr-10
+                        p-10
+                        shadow-lg
+                        rounded-t-sm
+                        mb-10
+                    "
+                >
+                    <img
+                        src="/assets/hand.svg"
+                        class="mb-7 w-28 h-28 rounded-full"
+                        alt=""
+                    />
+                    <h1
+                        class="text-purple text-xl font-medium text-center mb-5"
+                    >
+                        Ishaan Das
+                    </h1>
+                    <h2 class="text-lg">UI/UX Designer</h2>
+                </a>
+                <a
+                    href="/"
+                    class="
+                        user
+                        flex flex-col
+                        items-center
+                        w-1/6
+                        mr-10
+                        p-10
+                        shadow-lg
+                        rounded-t-sm
+                        mb-10
+                    "
+                >
+                    <img
+                        src="/assets/hand.svg"
+                        class="mb-7 w-28 h-28 rounded-full"
+                        alt=""
+                    />
+                    <h1
+                        class="text-purple text-xl font-medium text-center mb-5"
+                    >
+                        unique
+                    </h1>
+                    <h2 class="text-lg">UI/UX Designer</h2>
+                </a>
+                <a
+                    href="/"
+                    class="
+                        user
+                        flex flex-col
+                        items-center
+                        w-1/6
+                        mr-10
+                        p-10
+                        shadow-lg
+                        rounded-t-sm
+                        mb-10
+                    "
+                >
+                    <img
+                        src="/assets/hand.svg"
+                        class="mb-7 w-28 h-28 rounded-full"
+                        alt=""
+                    />
+                    <h1
+                        class="text-purple text-xl font-medium text-center mb-5"
+                    >
+                        Ishaan Das
+                    </h1>
+                    <h2 class="text-lg">UI/UX Designer</h2>
+                </a>
+            </div>
         </div>
-        <div class="project">
-          <h2 class="author">posted by <a>Ishaan Das</a></h2>
-          <h1 class="title">Project title</h1>
-          <h2 class="tags">UI/UX, Coding</h2>
-          <h2 class="roles">
-            <b>Listed roles:</b> <a>Web Development</a>, <a>UI Designer</a>
-          </h2>
-          <h2 class="description">
-            <b>Description:</b> Pellentesque et tempor nulla. Fusce velit urna,
-            finibus ut blandit a, elementum non diam. Proin sagittis et turpis
-            non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna
-            nisl imperdiet arcu, ac tempor sem dolor eu leo......
-          </h2>
-        </div>
-        <div class="project">
-          <h2 class="author">posted by <a>Ishaan Das</a></h2>
-          <h1 class="title">Project title</h1>
-          <h2 class="tags">UI/UX, Coding</h2>
-          <h2 class="roles">
-            <b>Listed roles:</b> <a>Web Development</a>, <a>UI Designer</a>
-          </h2>
-          <h2 class="description">
-            <b>Description:</b> Pellentesque et tempor nulla. Fusce velit urna,
-            finibus ut blandit a, elementum non diam. Proin sagittis et turpis
-            non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna
-            nisl imperdiet arcu, ac tempor sem dolor eu leo......
-          </h2>
-        </div>
-        <div class="project">
-          <h2 class="author">posted by <a>Ishaan Das</a></h2>
-          <h1 class="title">Project title</h1>
-          <h2 class="tags">UI/UX, Coding</h2>
-          <h2 class="roles">
-            <b>Listed roles:</b> <a>Web Development</a>, <a>UI Designer</a>
-          </h2>
-          <h2 class="description">
-            <b>Description:</b> Pellentesque et tempor nulla. Fusce velit urna,
-            finibus ut blandit a, elementum non diam. Proin sagittis et turpis
-            non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna
-            nisl imperdiet arcu, ac tempor sem dolor eu leo......
-          </h2>
-        </div>
-        <div class="project">
-          <h2 class="author">posted by <a>Ishaan Das</a></h2>
-          <h1 class="title">Project title</h1>
-          <h2 class="tags">UI/UX, Coding</h2>
-          <h2 class="roles">
-            <b>Listed roles:</b> <a>Web Development</a>, <a>UI Designer</a>
-          </h2>
-          <h2 class="description">
-            <b>Description:</b> Pellentesque et tempor nulla. Fusce velit urna,
-            finibus ut blandit a, elementum non diam. Proin sagittis et turpis
-            non ullamcorper. Fusce sagittis, est vel ullamcorper cursus, urna
-            nisl imperdiet arcu, ac tempor sem dolor eu leo......
-          </h2>
-        </div>
-      </div>
-    </div> -->
 
         <script src="/js/dash.js"></script>
     </body>
